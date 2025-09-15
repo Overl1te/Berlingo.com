@@ -1,1 +1,1 @@
-Berlingo — Модульный курс: 15 уроков, постепенное открытие, per-word translations and TTS. Запуск: python3 -m http.server или открыть index.html.
+Berlingo - кончи от немецкого языка
