@@ -1,0 +1,1327 @@
+{
+  "lessons": [
+    {
+      "id": "lesson1",
+      "level": "A1.1",
+      "title": "Приветствия и представления",
+      "intro": "Базовые приветствия, обращения и короткие фразы для знакомства.",
+      "theory": [
+        {
+          "title": "Приветствия",
+          "content": "Hallo, Guten Morgen, Guten Tag, Guten Abend, Tschüss — основные приветствия и прощания."
+        },
+        {
+          "title": "Обращение",
+          "content": "du — неформально; Sie — формально. Выберите форму в зависимости от ситуации."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Hallo",
+          "ru": "привет"
+        },
+        {
+          "de": "Guten Morgen",
+          "ru": "доброе утро"
+        },
+        {
+          "de": "Guten Tag",
+          "ru": "добрый день"
+        },
+        {
+          "de": "Guten Abend",
+          "ru": "добрый вечер"
+        },
+        {
+          "de": "Tschüss",
+          "ru": "пока"
+        },
+        {
+          "de": "Wie heißen Sie?",
+          "ru": "Как вас зовут?"
+        },
+        {
+          "de": "Wie heißt du?",
+          "ru": "Как тебя зовут?"
+        },
+        {
+          "de": "Ich heiße...",
+          "ru": "Меня зовут..."
+        },
+        {
+          "de": "Freut mich",
+          "ru": "приятно познакомиться"
+        },
+        {
+          "de": "Auf Wiedersehen",
+          "ru": "до свидания"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Hallo! Wie heißt du?",
+          "ru": "Привет! Как тебя зовут?"
+        },
+        {
+          "de": "Guten Morgen! Freut mich.",
+          "ru": "Доброе утро! Приятно познакомиться."
+        },
+        {
+          "de": "Auf Wiedersehen, bis bald.",
+          "ru": "До свидания, до скорого."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Как перевести 'Guten Abend'?",
+          "options": [
+            "Добрый вечер",
+            "Доброе утро",
+            "До свидания"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Введите перевод 'Tschüss' на русский:",
+          "answer": "пока"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери 'Ich heiße Anna'",
+          "pieces": [
+            "Ich",
+            "heiße",
+            "Anna"
+          ],
+          "correct": [
+            "Ich",
+            "heiße",
+            "Anna"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson2",
+      "level": "A1.1",
+      "title": "Числа 1–20",
+      "intro": "Счёт до 20, произношение и пример использования в фразах.",
+      "theory": [
+        {
+          "title": "Числа",
+          "content": "eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf, dreizehn, vierzehn, fünfzehn, sechzehn, siebzehn, achtzehn, neunzehn, zwanzig."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "eins",
+          "ru": "один"
+        },
+        {
+          "de": "zwei",
+          "ru": "два"
+        },
+        {
+          "de": "drei",
+          "ru": "три"
+        },
+        {
+          "de": "vier",
+          "ru": "четыре"
+        },
+        {
+          "de": "fünf",
+          "ru": "пять"
+        },
+        {
+          "de": "sechs",
+          "ru": "шесть"
+        },
+        {
+          "de": "sieben",
+          "ru": "семь"
+        },
+        {
+          "de": "acht",
+          "ru": "восемь"
+        },
+        {
+          "de": "neun",
+          "ru": "девять"
+        },
+        {
+          "de": "zehn",
+          "ru": "десять"
+        },
+        {
+          "de": "elf",
+          "ru": "одиннадцать"
+        },
+        {
+          "de": "zwölf",
+          "ru": "двенадцать"
+        },
+        {
+          "de": "zwanzig",
+          "ru": "двадцать"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Ich habe drei Äpfel.",
+          "ru": "У меня три яблока."
+        },
+        {
+          "de": "Zwanzig Euro, bitte.",
+          "ru": "Двадцать евро, пожалуйста."
+        },
+        {
+          "de": "Zwei Katzen sitzen dort.",
+          "ru": "Две кошки сидят там."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Как по-немецки 'восемь'?",
+          "options": [
+            "acht",
+            "neun",
+            "sieben"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Введите перевод 'zwölf' на русский:",
+          "answer": "двенадцать"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'zwanzig'",
+          "pieces": [
+            "zw",
+            "anzig"
+          ],
+          "correct": [
+            "zw",
+            "anzig"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson3",
+      "level": "A1.1",
+      "title": "Артикли: der, die, das",
+      "intro": "Род существительных и правильное использование определённого артикля.",
+      "theory": [
+        {
+          "title": "Род",
+          "content": "der (мужской), die (женский), das (средний). Запоминайте артикль вместе со словом."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Tisch",
+          "ru": "стол"
+        },
+        {
+          "de": "die Lampe",
+          "ru": "лампа"
+        },
+        {
+          "de": "das Buch",
+          "ru": "книга"
+        },
+        {
+          "de": "der Stuhl",
+          "ru": "стул"
+        },
+        {
+          "de": "die Tür",
+          "ru": "дверь"
+        },
+        {
+          "de": "das Fenster",
+          "ru": "окно"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Der Tisch ist groß.",
+          "ru": "Стол большой."
+        },
+        {
+          "de": "Die Lampe ist neu.",
+          "ru": "Лампа новая."
+        },
+        {
+          "de": "Das Buch liegt auf dem Tisch.",
+          "ru": "Книга лежит на столе."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Какой артикль у 'Tür'?",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Артикль для 'Stuhl' на немецком:",
+          "answer": "der"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери 'das Fenster'",
+          "pieces": [
+            "das",
+            "Fenster"
+          ],
+          "correct": [
+            "das",
+            "Fenster"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson4",
+      "level": "A1.2",
+      "title": "Семья и люди",
+      "intro": "Семейная лексика: родственники, как представить семью.",
+      "theory": [
+        {
+          "title": "Семья",
+          "content": "die Mutter, der Vater, der Bruder, die Schwester, die Eltern, das Kind."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "die Mutter",
+          "ru": "мать"
+        },
+        {
+          "de": "der Vater",
+          "ru": "отец"
+        },
+        {
+          "de": "der Bruder",
+          "ru": "брат"
+        },
+        {
+          "de": "die Schwester",
+          "ru": "сестра"
+        },
+        {
+          "de": "die Eltern",
+          "ru": "родители"
+        },
+        {
+          "de": "das Kind",
+          "ru": "ребёнок"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Das ist meine Mutter.",
+          "ru": "Это моя мать."
+        },
+        {
+          "de": "Er hat zwei Brüder.",
+          "ru": "У него два брата."
+        },
+        {
+          "de": "Wir besuchen die Eltern.",
+          "ru": "Мы навещаем родителей."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Кто 'die Eltern'?",
+          "options": [
+            "сын",
+            "родители",
+            "бабушка"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'der Bruder' на русский:",
+          "answer": "брат"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'meine Schwester'",
+          "pieces": [
+            "meine",
+            "Schwester"
+          ],
+          "correct": [
+            "meine",
+            "Schwester"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson5",
+      "level": "A1.2",
+      "title": "Дни недели и время",
+      "intro": "Дни недели, части дня и фразы о времени.",
+      "theory": [
+        {
+          "title": "Дни",
+          "content": "Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Montag",
+          "ru": "понедельник"
+        },
+        {
+          "de": "Dienstag",
+          "ru": "вторник"
+        },
+        {
+          "de": "Mittwoch",
+          "ru": "среда"
+        },
+        {
+          "de": "Donnerstag",
+          "ru": "четверг"
+        },
+        {
+          "de": "Freitag",
+          "ru": "пятница"
+        },
+        {
+          "de": "Samstag",
+          "ru": "суббота"
+        },
+        {
+          "de": "Sonntag",
+          "ru": "воскресенье"
+        },
+        {
+          "de": "heute",
+          "ru": "сегодня"
+        },
+        {
+          "de": "morgen",
+          "ru": "завтра"
+        },
+        {
+          "de": "Gestern",
+          "ru": "вчера"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Heute ist Freitag.",
+          "ru": "Сегодня пятница."
+        },
+        {
+          "de": "Morgen ist Mittwoch.",
+          "ru": "Завтра среда."
+        },
+        {
+          "de": "Gestern war Sonntag.",
+          "ru": "Вчера была воскресенье."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Как по-немецки 'сегодня'?",
+          "options": [
+            "morgen",
+            "heute",
+            "gestern"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'Samstag' на русский:",
+          "answer": "суббота"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Guten Morgen'",
+          "pieces": [
+            "Guten",
+            "Morgen"
+          ],
+          "correct": [
+            "Guten",
+            "Morgen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson6",
+      "level": "A1.2",
+      "title": "Еда и напитки",
+      "intro": "Основные названия еды и фразы в кафе.",
+      "theory": [
+        {
+          "title": "Еда",
+          "content": "das Brot, die Suppe, der Fisch, das Fleisch, die Milch, der Kaffee, das Wasser."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "das Brot",
+          "ru": "хлеб"
+        },
+        {
+          "de": "die Suppe",
+          "ru": "суп"
+        },
+        {
+          "de": "der Fisch",
+          "ru": "рыба"
+        },
+        {
+          "de": "das Fleisch",
+          "ru": "мясо"
+        },
+        {
+          "de": "die Milch",
+          "ru": "молоко"
+        },
+        {
+          "de": "der Kaffee",
+          "ru": "кофе"
+        },
+        {
+          "de": "das Wasser",
+          "ru": "вода"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Ich möchte einen Kaffee.",
+          "ru": "Я хочу кофе."
+        },
+        {
+          "de": "Das Brot ist frisch.",
+          "ru": "Хлеб свежий."
+        },
+        {
+          "de": "Das Wasser, bitte.",
+          "ru": "Воду, пожалуйста."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'die Milch' — это?",
+          "options": [
+            "молоко",
+            "вино",
+            "сыр"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'der Fisch' на русский:",
+          "answer": "рыба"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Ich möchte einen Kaffee'",
+          "pieces": [
+            "Ich",
+            "möchte",
+            "einen",
+            "Kaffee"
+          ],
+          "correct": [
+            "Ich",
+            "möchte",
+            "einen",
+            "Kaffee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson7",
+      "level": "A2.1",
+      "title": "Погода и сезоны",
+      "intro": "Слова о погоде и сезоны года, как описывать погоду.",
+      "theory": [
+        {
+          "title": "Погода",
+          "content": "sonnig, regnerisch, windig, schneien — базовые слова для описания погоды."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "die Sonne",
+          "ru": "солнце"
+        },
+        {
+          "de": "der Regen",
+          "ru": "дождь"
+        },
+        {
+          "de": "der Schnee",
+          "ru": "снег"
+        },
+        {
+          "de": "der Wind",
+          "ru": "ветер"
+        },
+        {
+          "de": "der Frühling",
+          "ru": "весна"
+        },
+        {
+          "de": "der Sommer",
+          "ru": "лето"
+        },
+        {
+          "de": "der Herbst",
+          "ru": "осень"
+        },
+        {
+          "de": "der Winter",
+          "ru": "зима"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Im Sommer ist es warm.",
+          "ru": "Летом тепло."
+        },
+        {
+          "de": "Es regnet heute.",
+          "ru": "Сегодня идёт дождь."
+        },
+        {
+          "de": "Im Winter schneit es oft.",
+          "ru": "Зимой часто идёт снег."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Что означает 'der Regen'?",
+          "options": [
+            "снег",
+            "дождь",
+            "ветер"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'Sommer' на русский:",
+          "answer": "лето"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Es regnet'",
+          "pieces": [
+            "Es",
+            "regnet"
+          ],
+          "correct": [
+            "Es",
+            "regnet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson8",
+      "level": "A2.1",
+      "title": "Город и направления",
+      "intro": "Как спросить дорогу и ориентироваться в городе.",
+      "theory": [
+        {
+          "title": "Направления",
+          "content": "links — налево, rechts — направо, geradeaus — прямо, zurück — назад."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "links",
+          "ru": "налево"
+        },
+        {
+          "de": "rechts",
+          "ru": "направо"
+        },
+        {
+          "de": "geradeaus",
+          "ru": "прямо"
+        },
+        {
+          "de": "die Straße",
+          "ru": "улица"
+        },
+        {
+          "de": "die Kreuzung",
+          "ru": "перекрёсток"
+        },
+        {
+          "de": "die Ampel",
+          "ru": "светофор"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Gehen Sie geradeaus.",
+          "ru": "Идите прямо."
+        },
+        {
+          "de": "Biegen Sie links ab.",
+          "ru": "Поверните налево."
+        },
+        {
+          "de": "Die Straße ist hier.",
+          "ru": "Улица здесь."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'geradeaus' — это?",
+          "options": [
+            "прямо",
+            "налево",
+            "направо"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'die Ampel' на русский:",
+          "answer": "светофор"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Biegen Sie links ab'",
+          "pieces": [
+            "Biegen",
+            "Sie",
+            "links",
+            "ab"
+          ],
+          "correct": [
+            "Biegen",
+            "Sie",
+            "links",
+            "ab"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson9",
+      "level": "A2.2",
+      "title": "Магазины и услуги",
+      "intro": "Фразы для покупок, запрос цены и поиска услуг.",
+      "theory": [
+        {
+          "title": "В магазине",
+          "content": "Wie viel kostet das? — Сколько стоит? Ich suche ... — Я ищу ..."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Preis",
+          "ru": "цена"
+        },
+        {
+          "de": "das Geschäft",
+          "ru": "магазин"
+        },
+        {
+          "de": "die Apotheke",
+          "ru": "аптека"
+        },
+        {
+          "de": "kaufen",
+          "ru": "покупать"
+        },
+        {
+          "de": "verkaufen",
+          "ru": "продавать"
+        },
+        {
+          "de": "die Kasse",
+          "ru": "касса"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Wie viel kostet das?",
+          "ru": "Сколько это стоит?"
+        },
+        {
+          "de": "Ich suche ein Geschäft.",
+          "ru": "Я ищу магазин."
+        },
+        {
+          "de": "Die Kasse ist dort.",
+          "ru": "Касса там."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Как спросить цену?",
+          "options": [
+            "Wo ist die Kasse?",
+            "Wie viel kostet das?",
+            "Ich suche die Apotheke."
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'das Geschäft' на русский:",
+          "answer": "магазин"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Ich suche die Apotheke'",
+          "pieces": [
+            "Ich",
+            "suche",
+            "die",
+            "Apotheke"
+          ],
+          "correct": [
+            "Ich",
+            "suche",
+            "die",
+            "Apotheke"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson10",
+      "level": "A2.2",
+      "title": "Здоровье и самочувствие",
+      "intro": "Фразы у врача и в аптеке, как описать симптомы.",
+      "theory": [
+        {
+          "title": "У врача",
+          "content": "Ich habe Fieber — У меня температура. Mir ist übel — Мне тошно."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Arzt",
+          "ru": "врач"
+        },
+        {
+          "de": "die Apotheke",
+          "ru": "аптека"
+        },
+        {
+          "de": "das Fieber",
+          "ru": "лихорадка"
+        },
+        {
+          "de": "die Schmerzen",
+          "ru": "боли"
+        },
+        {
+          "de": "die Tablette",
+          "ru": "таблетка"
+        },
+        {
+          "de": "Kopfschmerzen",
+          "ru": "головная боль"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Ich habe Kopfschmerzen.",
+          "ru": "У меня болит голова."
+        },
+        {
+          "de": "Ich brauche eine Tablette.",
+          "ru": "Мне нужна таблетка."
+        },
+        {
+          "de": "Gehen Sie zur Apotheke.",
+          "ru": "Идите в аптеку."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'Kopfschmerzen' — это?",
+          "options": [
+            "горло",
+            "боль в голове",
+            "ноздря"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'das Fieber' на русский:",
+          "answer": "лихорадка"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Ich habe Fieber'",
+          "pieces": [
+            "Ich",
+            "habe",
+            "Fieber"
+          ],
+          "correct": [
+            "Ich",
+            "habe",
+            "Fieber"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson11",
+      "level": "A2.2",
+      "title": "Путешествия и транспорт",
+      "intro": "Слова и фразы для транспорта: Zug, Bus, Flugzeug, билет и посадка.",
+      "theory": [
+        {
+          "title": "Транспорт",
+          "content": "der Zug, der Bus, das Flugzeug, die Fahrkarte — базовые слова для поездки."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Zug",
+          "ru": "поезд"
+        },
+        {
+          "de": "der Bus",
+          "ru": "автобус"
+        },
+        {
+          "de": "das Flugzeug",
+          "ru": "самолёт"
+        },
+        {
+          "de": "die Fahrkarte",
+          "ru": "билет"
+        },
+        {
+          "de": "der Bahnhof",
+          "ru": "вокзал"
+        },
+        {
+          "de": "der Flughafen",
+          "ru": "аэропорт"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Der Zug fährt um 10 Uhr.",
+          "ru": "Поезд отправляется в 10 часов."
+        },
+        {
+          "de": "Ich brauche eine Fahrkarte.",
+          "ru": "Мне нужен билет."
+        },
+        {
+          "de": "Der Flughafen ist groß.",
+          "ru": "Аэропорт большой."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'die Fahrkarte' — это?",
+          "options": [
+            "билет",
+            "вокзал",
+            "поезд"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'der Bahnhof' на русский:",
+          "answer": "вокзал"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Ich brauche eine Fahrkarte'",
+          "pieces": [
+            "Ich",
+            "brauche",
+            "eine",
+            "Fahrkarte"
+          ],
+          "correct": [
+            "Ich",
+            "brauche",
+            "eine",
+            "Fahrkarte"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson12",
+      "level": "B1.1",
+      "title": "Работа и профессии",
+      "intro": "Профессии, где работать, фразы о занятости.",
+      "theory": [
+        {
+          "title": "Профессии",
+          "content": "der Lehrer, die Ärztin, der Ingenieur, der Verkäufer — популярные профессии."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Lehrer",
+          "ru": "учитель"
+        },
+        {
+          "de": "die Ärztin",
+          "ru": "врач (женщина)"
+        },
+        {
+          "de": "der Ingenieur",
+          "ru": "инженер"
+        },
+        {
+          "de": "der Verkäufer",
+          "ru": "продавец"
+        },
+        {
+          "de": "die Firma",
+          "ru": "компания"
+        },
+        {
+          "de": "arbeiten",
+          "ru": "работать"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Ich arbeite bei einer Firma.",
+          "ru": "Я работаю в компании."
+        },
+        {
+          "de": "Er ist Ingenieur.",
+          "ru": "Он инженер."
+        },
+        {
+          "de": "Die Lehrerin unterrichtet Deutsch.",
+          "ru": "Учительница преподаёт немецкий."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'arbeiten' — значит?",
+          "options": [
+            "играть",
+            "работать",
+            "спать"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'die Firma' на русский:",
+          "answer": "компания"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Er ist Ingenieur'",
+          "pieces": [
+            "Er",
+            "ist",
+            "Ingenieur"
+          ],
+          "correct": [
+            "Er",
+            "ist",
+            "Ingenieur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson13",
+      "level": "B1.1",
+      "title": "Образование и школа",
+      "intro": "Слова о школе, предметы и фразы учителя/ученика.",
+      "theory": [
+        {
+          "title": "Школа",
+          "content": "die Schule, der Unterricht, die Prüfung, lernen — слова для школьной темы."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "die Schule",
+          "ru": "школа"
+        },
+        {
+          "de": "der Unterricht",
+          "ru": "занятие"
+        },
+        {
+          "de": "die Prüfung",
+          "ru": "экзамен"
+        },
+        {
+          "de": "lernen",
+          "ru": "учить(ся)"
+        },
+        {
+          "de": "der Schüler",
+          "ru": "ученик"
+        },
+        {
+          "de": "die Lehrerin",
+          "ru": "учительница"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Wir haben morgen eine Prüfung.",
+          "ru": "У нас завтра экзамен."
+        },
+        {
+          "de": "Die Schüler lernen Deutsch.",
+          "ru": "Ученики учат немецкий."
+        },
+        {
+          "de": "Der Unterricht beginnt um acht.",
+          "ru": "Занятия начинаются в восемь."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'die Prüfung' — это?",
+          "options": [
+            "экзамен",
+            "перерыв",
+            "урок"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'lernen' на русский:",
+          "answer": "учить"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Die Schüler lernen Deutsch'",
+          "pieces": [
+            "Die",
+            "Schüler",
+            "lernen",
+            "Deutsch"
+          ],
+          "correct": [
+            "Die",
+            "Schüler",
+            "lernen",
+            "Deutsch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson14",
+      "level": "B1.2",
+      "title": "Хобби и досуг",
+      "intro": "Хобби, как рассказать о своих интересах.",
+      "theory": [
+        {
+          "title": "Хобби",
+          "content": "spielen, lesen, schwimmen, malen — как говорить о любимых занятиях."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "spielen",
+          "ru": "играть"
+        },
+        {
+          "de": "lesen",
+          "ru": "читать"
+        },
+        {
+          "de": "schwimmen",
+          "ru": "плавать"
+        },
+        {
+          "de": "malen",
+          "ru": "рисовать"
+        },
+        {
+          "de": "das Hobby",
+          "ru": "хобби"
+        },
+        {
+          "de": "die Freizeit",
+          "ru": "свободное время"
+        }
+      ],
+      "examples": [
+        {
+          "de": "In meiner Freizeit lese ich gerne.",
+          "ru": "В свободное время я люблю читать."
+        },
+        {
+          "de": "Er spielt Fußball.",
+          "ru": "Он играет в футбол."
+        },
+        {
+          "de": "Wir schwimmen im Sommer.",
+          "ru": "Мы плаваем летом."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'lesen' — это?",
+          "options": [
+            "плавать",
+            "читать",
+            "писать"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'die Freizeit' на русский:",
+          "answer": "свободное время"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Ich spiele gern Fußball'",
+          "pieces": [
+            "Ich",
+            "spiele",
+            "gern",
+            "Fußball"
+          ],
+          "correct": [
+            "Ich",
+            "spiele",
+            "gern",
+            "Fußball"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson15",
+      "level": "B1.2",
+      "title": "Ресторан и меню",
+      "intro": "Как заказать еду: фразы, меню и вежливость.",
+      "theory": [
+        {
+          "title": "В ресторане",
+          "content": "Bestellen, zahlen, Rechnung — базовые глаголы и фразы."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "die Speisekarte",
+          "ru": "меню"
+        },
+        {
+          "de": "bestellen",
+          "ru": "заказывать"
+        },
+        {
+          "de": "zahlen",
+          "ru": "платить"
+        },
+        {
+          "de": "die Rechnung",
+          "ru": "счёт"
+        },
+        {
+          "de": "vegetarisch",
+          "ru": "вегетарианский"
+        },
+        {
+          "de": "der Kellner",
+          "ru": "официант"
+        }
+      ],
+      "examples": [
+        {
+          "de": "Die Speisekarte, bitte.",
+          "ru": "Меню, пожалуйста."
+        },
+        {
+          "de": "Ich möchte bestellen.",
+          "ru": "Я хочу заказать."
+        },
+        {
+          "de": "Die Rechnung, bitte.",
+          "ru": "Счёт, пожалуйста."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Как сказать 'счёт' на немецком?",
+          "options": [
+            "die Rechnung",
+            "die Speisekarte",
+            "das Gericht"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Перевод 'bestellen' на русский:",
+          "answer": "заказывать"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Соберите 'Die Speisekarte bitte'",
+          "pieces": [
+            "Die",
+            "Speisekarte",
+            "bitte"
+          ],
+          "correct": [
+            "Die",
+            "Speisekarte",
+            "bitte"
+          ]
+        }
+      ]
+    }
+  ]
+}
