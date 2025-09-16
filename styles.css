@@ -25,8 +25,8 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
 .hero { margin-top: 12px; padding: 14px; background: linear-gradient(180deg, rgba(171,71,188,0.08), transparent); border-radius: 12px; box-shadow: 0 8px 24px rgba(2,0,10,0.5); }
 .hero h2 { margin: 0 0 6px 0; }
 .lead { color: var(--muted); margin: 0; font-size: 14px; }
-.lessons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
-.lesson-card { background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.03)); border: 1px solid var(--glass-border); padding: 14px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); display: flex; flex-direction: column; justify-content: space-between; min-height: 120px; transition: transform .3s ease, box-shadow .3s ease, opacity .3s ease; }
+.lessons-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+.lesson-card { margin: 10px 0px; position: relative;  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.03)); border: 1px solid var(--glass-border); padding: 14px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); display: flex; flex-direction: column; justify-content: space-between; min-height: 120px; transition: transform .3s ease, box-shadow .3s ease, opacity .3s ease; }
 .lesson-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.6); }
 .lesson-card.locked { opacity: 0.5; pointer-events: none; }
 .lock-badge { padding: 6px 8px; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.03); font-size: 12px; color: var(--muted); }
@@ -120,6 +120,18 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
 .popup-translate { margin-top: 6px; color: var(--muted); }
 .hidden { display: none; }
 .special-chars .btn { padding: 4px 8px; font-size: 14px; }
+.nav-container {display: flex; padding: 10px; border: 1px solid #7b1fa2; background: linear-gradient(180deg, rgba(10,6,20,0.7), rgba(10,6,20,0.5)); width: auto; justify-content: center; border-radius: 20px;}
+.nav-item {padding: 5px 20px; margin: 0px 10px; border: 1px solid #ab47bc; cursor: pointer; border-radius: 10px;}
+.nav-item.active {
+  background: linear-gradient(270deg, rgb(83, 61, 139), rgb(121, 43, 101));
+}
+.nav-item:hover {
+  transform: scale(1.02);
+}
+.nav-item.active:hover {
+  background: linear-gradient(90deg, rgb(83, 61, 139), rgb(121, 43, 101));
+  transform: scale(1.02);
+}
 @media (max-width: 600px) {
   .container { padding: 12px; }
   .lessons-grid { grid-template-columns: 1fr; }

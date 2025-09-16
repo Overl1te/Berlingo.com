@@ -1,0 +1,23 @@
+{
+  "practices": [
+    {
+      "id": "practice1",
+      "based_on_lessons": [
+        "lesson1",
+        "lesson2"
+      ],
+      "type": "sentence_build",
+      "description": "Построй предложения из слов",
+      "generator": "random"
+    },
+    {
+      "id": "practice2",
+      "based_on_lessons": [
+        "lesson1"
+      ],
+      "type": "translate_words",
+      "description": "Переведи слова",
+      "generator": "random"
+    }
+  ]
+}

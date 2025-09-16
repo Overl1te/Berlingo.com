@@ -1,0 +1,87 @@
+{
+  "grammar": [
+    {
+      "id": "grammar1",
+      "level": "A1",
+      "title": "Артикли",
+      "intro": "Определенные и неопределенные артикли",
+      "theory": [
+        {
+          "title": "Определенные артикли",
+          "content": "der (мужской), die (женский), das (средний). Пример: der Mann, die Frau, das Kind."
+        },
+        {
+          "title": "Неопределенные артикли",
+          "content": "ein (муж/ср), eine (жен). Пример: ein Apfel, eine Banane."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "___ Mann ist groß.",
+          "answers": [
+            "Der"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Артикль для 'Frau'?",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "grammar2",
+      "level": "A1",
+      "title": "Спряжение глаголов",
+      "intro": "Спряжение регулярных глаголов",
+      "theory": [
+        {
+          "title": "Настоящее время",
+          "content": "ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en. Пример: spielen - ich spiele."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "Ich ___ Fußball. (spielen)",
+          "answers": [
+            "spiele"
+          ]
+        }
+      ]
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening1",
+      "level": "A1",
+      "title": "Аудирование приветствий",
+      "intro": "Слушай и распознавай приветствия",
+      "theory": [
+        {
+          "title": "Приветствия",
+          "content": "Слушай 'Hallo', 'Guten Tag' и т.д."
+        }
+      ],
+      "exercises": [
+        {
+          "type": "listen_type",
+          "question": "Что сказал?",
+          "phrase": "Hallo",
+          "options": [
+            "Hallo",
+            "Tschüss",
+            "Guten Tag"
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ]
+}

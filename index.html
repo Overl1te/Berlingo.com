@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berlingo — Полный модульный курс</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Berlingo - Немецкий</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <header class="site-header">
-      <div class="header-inner container">
+    <div class="site-header">
+      <div class="header-inner">
         <div class="brand">
           <div class="logo">B</div>
           <div>
@@ -19,13 +19,21 @@
           </div>
         </div>
       </div>
-    </header>
+    </div>
+    <div class="nav-container">
+      <div class="nav-item">Учёба</div>
+      <div class="nav-item">Правила</div>
+      <div class="nav-item">Тренировка</div>
+    </div>
     <div class="hero">
       <h2>Пошаговое изучение немецкого</h2>
       <p class="lead">Интерактивные уроки с теорией, словарным запасом и упражнениями.</p>
     </div>
     <div id="lessons" class="lessons-grid"></div>
   </div>
-  <script src="script_modules.js"></script>
+  <script src="helpers.js"></script>
+  <script src="ui.js"></script>
+  <script src="exercises.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

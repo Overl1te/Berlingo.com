@@ -116,7 +116,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши приветствие",
-          "phrase": "Guten Morgen"
+          "answer": "Guten Morgen"
         },
         {
           "type": "mcq",
@@ -158,7 +158,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "Auf Wiedersehen"
+          "answer": "Auf Wiedersehen"
         },
         {
           "type": "match",
@@ -314,7 +314,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "elf"
+          "answer": "elf"
         },
         {
           "type": "mcq",
@@ -354,7 +354,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "sieben"
+          "answer": "sieben"
         },
         {
           "type": "match",
@@ -482,7 +482,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши артикль",
-          "phrase": "die Frau"
+          "answer": "die Frau"
         },
         {
           "type": "mcq",
@@ -629,7 +629,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "Ich bin Student"
+          "answer": "Ich bin Student"
         },
         {
           "type": "mcq",
@@ -766,7 +766,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "Ich habe Hunger"
+          "answer": "Ich habe Hunger"
         },
         {
           "type": "mcq",
@@ -897,7 +897,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши вопрос",
-          "phrase": "Wer bist du?"
+          "answer": "Wer bist du?"
         },
         {
           "type": "mcq",
@@ -1044,7 +1044,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши цвет",
-          "phrase": "blau"
+          "answer": "blau"
         },
         {
           "type": "mcq",
@@ -1181,7 +1181,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "mein Bruder"
+          "answer": "mein Bruder"
         },
         {
           "type": "mcq",
@@ -1306,7 +1306,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши в аккузативе",
-          "phrase": "den Hund"
+          "answer": "den Hund"
         },
         {
           "type": "mcq",
@@ -1437,7 +1437,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши в датив",
-          "phrase": "dem Kind"
+          "answer": "dem Kind"
         },
         {
           "type": "mcq",
@@ -1562,7 +1562,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши plural",
-          "phrase": "Kinder"
+          "answer": "Kinder"
         },
         {
           "type": "mcq",
@@ -1685,7 +1685,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши прилагательное",
-          "phrase": "großer Hund"
+          "answer": "großer Hund"
         },
         {
           "type": "mcq",
@@ -1808,7 +1808,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши глагол",
-          "phrase": "macht"
+          "answer": "macht"
         },
         {
           "type": "mcq",
@@ -1935,7 +1935,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши в Perfekt",
-          "phrase": "habe gearbeitet"
+          "answer": "habe gearbeitet"
         },
         {
           "type": "mcq",
@@ -2058,7 +2058,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши в Futur",
-          "phrase": "wird gehen"
+          "answer": "wird gehen"
         },
         {
           "type": "mcq",
@@ -2189,7 +2189,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши модальный",
-          "phrase": "kann schwimmen"
+          "answer": "kann schwimmen"
         },
         {
           "type": "mcq",
@@ -2324,7 +2324,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши предлог",
-          "phrase": "unter dem Bett"
+          "answer": "unter dem Bett"
         },
         {
           "type": "mcq",
@@ -2453,7 +2453,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши союз",
-          "phrase": "weil ich lerne"
+          "answer": "weil ich lerne"
         },
         {
           "type": "mcq",
@@ -2576,7 +2576,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши в генитив",
-          "phrase": "des Hauses"
+          "answer": "des Hauses"
         },
         {
           "type": "mcq",
@@ -2697,7 +2697,7 @@
         {
           "type": "listen_type",
           "question": "Прослушай и напиши",
-          "phrase": "wenn du kommst"
+          "answer": "wenn du kommst"
         },
         {
           "type": "mcq",
