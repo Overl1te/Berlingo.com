@@ -4,68 +4,2724 @@
       "id": "lesson1",
       "level": "A1.1",
       "title": "Приветствия и представления",
-      "intro": "Учи базовые фразы для знакомства",
+      "intro": "Учи базовые фразы для знакомства и первые шаги в построении простых предложений",
       "theory": [
         {
           "title": "Приветствия",
-          "content": "Hallo (неформально), Guten Tag (формально). du — друзьям, Sie — незнакомым."
+          "content": "В немецком языке приветствия зависят от степени формальности. Неформально используйте 'Hallo' с друзьями или ровесниками. Формально - 'Guten Tag' (добрый день) или 'Guten Morgen' (доброе утро) для незнакомых людей или в официальной обстановке. Помните о местоимениях: 'du' для неформального обращения (ты), 'Sie' для формального (Вы, всегда с большой буквы). Пример: Hallo, ich bin Anna. (Привет, я Анна.)"
+        },
+        {
+          "title": "Представления",
+          "content": "Чтобы представиться, используйте 'Ich heiße...' (Меня зовут...). Для вопроса: 'Wie heißen Sie?' (формально) или 'Wie heißt du?' (неформально). Ответ: 'Freut mich' (Приятно познакомиться). Подсказка: Глагол 'heißen' (звать) спрягается как heißen - heiße - heißt. В предложениях подлежащее всегда на первом месте, глагол на втором."
+        },
+        {
+          "title": "Прощания",
+          "content": "Неформально: 'Tschüss' или 'Ciao'. Формально: 'Auf Wiedersehen'. Подсказка: В немецком предложении всегда соблюдайте порядок слов: подлежащее - глагол - дополнения."
+        },
+        {
+          "title": "Подсказки по построению предложений",
+          "content": "Простые предложения: Подлежащее + глагол + объект. Пример: Ich heiße Max. (Я зовусь Макс.) Вопросы: Глагол на первое место. Пример: Heißt du Max? (Зовут ли тебя Макс?)"
         }
       ],
       "vocab": [
-        {"de": "Hallo", "ru": "привет"},
-        {"de": "Guten Tag", "ru": "добрый день"},
-        {"de": "Tschüss", "ru": "пока"},
-        {"de": "Wie heißt du?", "ru": "Как тебя зовут?"},
-        {"de": "Ich heiße...", "ru": "Меня зовут..."},
-        {"de": "Freut mich", "ru": "Приятно познакомиться"}
+        {
+          "de": "Hallo",
+          "ru": "привет"
+        },
+        {
+          "de": "Guten Tag",
+          "ru": "добрый день"
+        },
+        {
+          "de": "Tschüss",
+          "ru": "пока"
+        },
+        {
+          "de": "Wie heißt du?",
+          "ru": "Как тебя зовут?"
+        },
+        {
+          "de": "Ich heiße...",
+          "ru": "Меня зовут..."
+        },
+        {
+          "de": "Freut mich",
+          "ru": "Приятно познакомиться"
+        },
+        {
+          "de": "Guten Morgen",
+          "ru": "доброе утро"
+        },
+        {
+          "de": "Auf Wiedersehen",
+          "ru": "до свидания"
+        }
       ],
       "exercises": [
-        {"type": "mcq", "question": "Как сказать 'привет'?", "options": ["Hallo", "Tschüss", "Ich heiße"], "answer": 0},
-        {"type": "input", "question": "Переведи 'пока':", "answer": "Tschüss"},
-        {"type": "reorder", "instruction": "Собери 'Wie heißt du?'", "pieces": ["Wie", "heißt", "du?"], "correct": ["Wie", "heißt", "du?"]},
-        {"type": "match", "question": "Сопоставь", "pairs": [{"de": "Hallo", "ru": "привет"}, {"de": "Tschüss", "ru": "пока"}, {"de": "Freut mich", "ru": "Приятно познакомиться"}]},
-        {"type": "fill_blank", "question": "Дополни предложение", "sentence": "___ heiße Anna.", "answers": ["Ich"]},
-        {"type": "listen_type", "question": "Прослушай и напиши", "phrase": "Guten Tag"},
-        {"type": "mcq", "question": "Формальное приветствие?", "options": ["Hallo", "Guten Tag", "Tschüss"], "answer": 1},
-        {"type": "input", "question": "Переведи 'Меня зовут...':", "answer": "Ich heiße"},
-        {"type": "reorder", "instruction": "Собери 'Freut mich'", "pieces": ["Freut", "mich"], "correct": ["Freut", "mich"]},
-        {"type": "fill_blank", "question": "Дополни предложение", "sentence": "Wie ___ du?", "answers": ["heißt"]},
-        {"type": "listen_type", "question": "Прослушай и напиши", "phrase": "Tschüss"},
-        {"type": "match", "question": "Сопоставь фразы", "pairs": [{"de": "Wie heißt du?", "ru": "Как тебя зовут?"}, {"de": "Ich heiße...", "ru": "Меня зовут..."}]}
+        {
+          "type": "mcq",
+          "question": "Как сказать 'привет' неформально?",
+          "options": [
+            "Guten Tag",
+            "Hallo",
+            "Tschüss"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'добрый день':",
+          "answer": "Guten Tag"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери предложение: 'Wie heißt du?'",
+          "pieces": [
+            "Wie",
+            "heißt",
+            "du?"
+          ],
+          "correct": [
+            "Wie",
+            "heißt",
+            "du?"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь приветствия",
+          "pairs": [
+            {
+              "de": "Hallo",
+              "ru": "привет"
+            },
+            {
+              "de": "Tschüss",
+              "ru": "пока"
+            },
+            {
+              "de": "Freut mich",
+              "ru": "Приятно познакомиться"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: ___ heiße Anna.",
+          "sentence": "___ heiße Anna.",
+          "answers": [
+            "Ich"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши приветствие",
+          "phrase": "Guten Morgen"
+        },
+        {
+          "type": "mcq",
+          "question": "Формальное прощание?",
+          "options": [
+            "Tschüss",
+            "Auf Wiedersehen",
+            "Hallo"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'Приятно познакомиться':",
+          "answer": "Freut mich"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich heiße Max.'",
+          "pieces": [
+            "Ich",
+            "heiße",
+            "Max."
+          ],
+          "correct": [
+            "Ich",
+            "heiße",
+            "Max."
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни вопрос: Wie ___ Sie?",
+          "sentence": "Wie ___ Sie?",
+          "answers": [
+            "heißt"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "Auf Wiedersehen"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь фразы",
+          "pairs": [
+            {
+              "de": "Wie heißt du?",
+              "ru": "Как тебя зовут?"
+            },
+            {
+              "de": "Ich heiße...",
+              "ru": "Меня зовут..."
+            }
+          ]
+        }
       ]
     },
     {
       "id": "lesson2",
       "level": "A1.1",
-      "title": "Числа 1–20",
-      "intro": "Считай до 20 на немецком",
+      "title": "Числа от 1 до 20",
+      "intro": "Научись считать и использовать числа в простых предложениях",
       "theory": [
         {
-          "title": "Числа",
-          "content": "1-10: eins-zwei-...-zehn. 11-20: elf-zwölf-...-zwanzig."
+          "title": "Числа 1-10",
+          "content": "eins (1), zwei (2), drei (3), vier (4), fünf (5), sechs (6), sieben (7), acht (8), neun (9), zehn (10). Числа используются как прилагательные и не склоняются в простых случаях. Пример: Ich habe zwei Äpfel. (У меня два яблока.)"
+        },
+        {
+          "title": "Числа 11-20",
+          "content": "elf (11), zwölf (12), dreizehn (13), vierzehn (14), fünfzehn (15), sechzehn (16), siebzehn (17), achtzehn (18), neunzehn (19), zwanzig (20). Подсказка: Числа от 13 до 19 строятся как 'число + zehn'."
+        },
+        {
+          "title": "Использование в предложениях",
+          "content": "Числа ставятся перед существительным. В именительном падеже: Drei Hunde. (Три собаки.) Подсказка: Если число один, используйте артикль: Ein Hund. (Один собака.)"
+        },
+        {
+          "title": "Подсказки",
+          "content": "В вопросах: Wie viele? (Сколько?) Пример: Wie viele Äpfel hast du? (Сколько у тебя яблок?) Отрицание: Kein (ни один), keine (ни одна)."
         }
       ],
       "vocab": [
-        {"de": "eins", "ru": "один"},
-        {"de": "zwei", "ru": "два"},
-        {"de": "drei", "ru": "три"},
-        {"de": "zehn", "ru": "десять"},
-        {"de": "elf", "ru": "одиннадцать"},
-        {"de": "zwanzig", "ru": "двадцать"}
+        {
+          "de": "eins",
+          "ru": "один"
+        },
+        {
+          "de": "zwei",
+          "ru": "два"
+        },
+        {
+          "de": "drei",
+          "ru": "три"
+        },
+        {
+          "de": "vier",
+          "ru": "четыре"
+        },
+        {
+          "de": "fünf",
+          "ru": "пять"
+        },
+        {
+          "de": "sechs",
+          "ru": "шесть"
+        },
+        {
+          "de": "sieben",
+          "ru": "семь"
+        },
+        {
+          "de": "acht",
+          "ru": "восемь"
+        },
+        {
+          "de": "neun",
+          "ru": "девять"
+        },
+        {
+          "de": "zehn",
+          "ru": "десять"
+        },
+        {
+          "de": "elf",
+          "ru": "одиннадцать"
+        },
+        {
+          "de": "zwölf",
+          "ru": "двенадцать"
+        },
+        {
+          "de": "dreizehn",
+          "ru": "тринадцать"
+        },
+        {
+          "de": "zwanzig",
+          "ru": "двадцать"
+        }
       ],
       "exercises": [
-        {"type": "mcq", "question": "'два' на немецком?", "options": ["eins", "zwei", "drei"], "answer": 1},
-        {"type": "input", "question": "Переведи 'десять':", "answer": "zehn"},
-        {"type": "reorder", "instruction": "Собери 'zwanzig'", "pieces": ["zwan", "zig"], "correct": ["zwan", "zig"]},
-        {"type": "match", "question": "Сопоставь числа", "pairs": [{"de": "eins", "ru": "один"}, {"de": "zwei", "ru": "два"}, {"de": "drei", "ru": "три"}]},
-        {"type": "fill_blank", "sentence": "___ Äpfel (три)", "answers": ["Drei"]},
-        {"type": "listen_type", "question": "Прослушай и напиши", "phrase": "elf"},
-        {"type": "mcq", "question": "'одиннадцать'?", "options": ["zehn", "elf", "zwölf"], "answer": 1},
-        {"type": "input", "question": "Переведи 'двадцать':", "answer": "zwanzig"},
-        {"type": "fill_blank", "sentence": "Ich habe ___ Katzen (две)", "answers": ["zwei"]},
-        {"type": "listen_type", "question": "Прослушай и напиши", "phrase": "drei"},
-        {"type": "match", "question": "Сопоставь", "pairs": [{"de": "zehn", "ru": "десять"}, {"de": "zwanzig", "ru": "двадцать"}]},
-        {"type": "reorder", "instruction": "Собери 'fünfzehn' (15)", "pieces": ["fünf", "zehn"], "correct": ["fünf", "zehn"]}
+        {
+          "type": "mcq",
+          "question": "'три' на немецком?",
+          "options": [
+            "zwei",
+            "drei",
+            "vier"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'десять':",
+          "answer": "zehn"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери число 'fünfzehn' (15)",
+          "pieces": [
+            "fünf",
+            "zehn"
+          ],
+          "correct": [
+            "fünf",
+            "zehn"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь числа",
+          "pairs": [
+            {
+              "de": "eins",
+              "ru": "один"
+            },
+            {
+              "de": "zwei",
+              "ru": "два"
+            },
+            {
+              "de": "drei",
+              "ru": "три"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich habe ___ Katzen (две).",
+          "sentence": "Ich habe ___ Katzen (две).",
+          "answers": [
+            "zwei"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "elf"
+        },
+        {
+          "type": "mcq",
+          "question": "'двадцать'?",
+          "options": [
+            "zehn",
+            "elf",
+            "zwanzig"
+          ],
+          "answer": 2
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'пять':",
+          "answer": "fünf"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери предложение: 'Drei Hunde.'",
+          "pieces": [
+            "Drei",
+            "Hunde."
+          ],
+          "correct": [
+            "Drei",
+            "Hunde."
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Wie viele? ___ Äpfel (четыре).",
+          "sentence": "Wie viele? ___ Äpfel (четыре).",
+          "answers": [
+            "Vier"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "sieben"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "achtzehn",
+              "ru": "восемнадцать"
+            },
+            {
+              "de": "neunzehn",
+              "ru": "девятнадцать"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson3",
+      "level": "A1.1",
+      "title": "Определенные и неопределенные артикли",
+      "intro": "Пойми род существительных и как использовать артикли в предложениях",
+      "theory": [
+        {
+          "title": "Род существительных",
+          "content": "В немецком три рода: мужской (der), женский (die), средний (das). Род нужно запоминать. Пример: der Mann (мужчина), die Frau (женщина), das Kind (ребенок)."
+        },
+        {
+          "title": "Неопределенные артикли",
+          "content": "ein (муж/ср), eine (жен). Используются для 'a/an'. Пример: ein Apfel (яблоко). Подсказка: В аккузативе мужской меняется на einen."
+        },
+        {
+          "title": "Определенные артикли",
+          "content": "der, die, das. Для 'the'. Склоняются по падежам. Именительный: der/die/das. Аккузатив: den/die/das. Подсказка: Всегда проверяйте род перед использованием."
+        },
+        {
+          "title": "Построение предложений",
+          "content": "Существительное с артиклем: Der Hund beißt. (Собака кусает.) Подсказка: В предложениях артикль согласуется с родом и падежом."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Mann",
+          "ru": "мужчина"
+        },
+        {
+          "de": "die Frau",
+          "ru": "женщина"
+        },
+        {
+          "de": "das Kind",
+          "ru": "ребенок"
+        },
+        {
+          "de": "ein Apfel",
+          "ru": "яблоко"
+        },
+        {
+          "de": "eine Banane",
+          "ru": "банан"
+        },
+        {
+          "de": "das Haus",
+          "ru": "дом"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Артикль для 'Mann'?",
+          "options": [
+            "die",
+            "der",
+            "das"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Неопределенный артикль для 'Frau':",
+          "answer": "eine"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: ___ Kind spielt.",
+          "sentence": "___ Kind spielt.",
+          "answers": [
+            "Das"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь артикли",
+          "pairs": [
+            {
+              "de": "der",
+              "ru": "мужской"
+            },
+            {
+              "de": "die",
+              "ru": "женский"
+            },
+            {
+              "de": "das",
+              "ru": "средний"
+            }
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ein Apfel ist rot.'",
+          "pieces": [
+            "Ein",
+            "Apfel",
+            "ist",
+            "rot."
+          ],
+          "correct": [
+            "Ein",
+            "Apfel",
+            "ist",
+            "rot."
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши артикль",
+          "phrase": "die Frau"
+        },
+        {
+          "type": "mcq",
+          "question": "Аккузатив для 'der Mann'?",
+          "options": [
+            "der",
+            "den",
+            "das"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Артикль для 'Haus':",
+          "answer": "das"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich sehe ___ Mann.",
+          "sentence": "Ich sehe ___ Mann.",
+          "answers": [
+            "den"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "eine",
+              "ru": "a (жен)"
+            },
+            {
+              "de": "ein",
+              "ru": "a (муж/ср)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson4",
+      "level": "A1.1",
+      "title": "Глагол sein (быть)",
+      "intro": "Спряжение глагола sein и использование в описательных предложениях",
+      "theory": [
+        {
+          "title": "Спряжение sein",
+          "content": "ich bin (я есть), du bist (ты есть), er/sie/es ist (он/она/оно есть), wir sind (мы есть), ihr seid (вы есть), sie/Sie sind (они/Вы есть). Нерегулярный глагол."
+        },
+        {
+          "title": "Использование",
+          "content": "Для описаний: Ich bin Student. (Я студент.) Подсказка: Глагол на втором месте в предложении."
+        },
+        {
+          "title": "Вопросы и отрицания",
+          "content": "Вопрос: Bist du müde? (Ты устал?) Отрицание: Ich bin nicht müde. (Я не устал.) Подсказка: 'nicht' после sein."
+        },
+        {
+          "title": "Построение предложений",
+          "content": "Подлежащее + sein + сказуемое. Пример: Das ist ein Buch. (Это книга.)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "bin",
+          "ru": "am (ich)"
+        },
+        {
+          "de": "bist",
+          "ru": "are (du)"
+        },
+        {
+          "de": "ist",
+          "ru": "is"
+        },
+        {
+          "de": "sind",
+          "ru": "are (wir/sie)"
+        },
+        {
+          "de": "Student",
+          "ru": "студент"
+        },
+        {
+          "de": "müde",
+          "ru": "усталый"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Для 'ich':",
+          "options": [
+            "bist",
+            "bin",
+            "ist"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Спряжение для 'du':",
+          "answer": "bist"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Er ___ Arzt.",
+          "sentence": "Er ___ Arzt.",
+          "answers": [
+            "ist"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich bin nicht müde.'",
+          "pieces": [
+            "Ich",
+            "bin",
+            "nicht",
+            "müde."
+          ],
+          "correct": [
+            "Ich",
+            "bin",
+            "nicht",
+            "müde."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь спряжения",
+          "pairs": [
+            {
+              "de": "wir",
+              "ru": "sind"
+            },
+            {
+              "de": "ihr",
+              "ru": "seid"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "Ich bin Student"
+        },
+        {
+          "type": "mcq",
+          "question": "Отрицание: Ich ___ nicht.",
+          "options": [
+            "bin",
+            "bist",
+            "ist"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Вопрос: ___ du Student?",
+          "answer": "Bist"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Wir ___ Freunde.",
+          "sentence": "Wir ___ Freunde.",
+          "answers": [
+            "sind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson5",
+      "level": "A1.1",
+      "title": "Глагол haben (иметь)",
+      "intro": "Спряжение haben и предложения о владении",
+      "theory": [
+        {
+          "title": "Спряжение haben",
+          "content": "ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. Нерегулярный."
+        },
+        {
+          "title": "Использование",
+          "content": "Для владения: Ich habe ein Auto. (У меня машина.) Подсказка: В аккузативе после haben."
+        },
+        {
+          "title": "Вопросы и отрицания",
+          "content": "Hast du Hunger? (Ты голоден?) Ich habe kein Geld. (У меня нет денег.) Подсказка: 'kein' для отрицания с неопределенным артиклем."
+        },
+        {
+          "title": "Построение",
+          "content": "Подлежащее + haben + объект в аккузативе."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "habe",
+          "ru": "have (ich)"
+        },
+        {
+          "de": "hast",
+          "ru": "have (du)"
+        },
+        {
+          "de": "hat",
+          "ru": "has"
+        },
+        {
+          "de": "haben",
+          "ru": "have (wir/sie)"
+        },
+        {
+          "de": "Auto",
+          "ru": "машина"
+        },
+        {
+          "de": "Geld",
+          "ru": "деньги"
+        },
+        {
+          "de": "Hunger",
+          "ru": "голод"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Для 'du':",
+          "options": [
+            "habe",
+            "hast",
+            "hat"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Спряжение для 'er':",
+          "answer": "hat"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich ___ ein Buch.",
+          "sentence": "Ich ___ ein Buch.",
+          "answers": [
+            "habe"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Hast du ein Auto?'",
+          "pieces": [
+            "Hast",
+            "du",
+            "ein",
+            "Auto?"
+          ],
+          "correct": [
+            "Hast",
+            "du",
+            "ein",
+            "Auto?"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "ihr",
+              "ru": "habt"
+            },
+            {
+              "de": "sie",
+              "ru": "haben"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "Ich habe Hunger"
+        },
+        {
+          "type": "mcq",
+          "question": "Отрицание: Ich habe ___ Auto.",
+          "options": [
+            "ein",
+            "kein",
+            "das"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Вопрос: ___ Sie Geld?",
+          "answer": "Haben"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Sie ___ kein Haus.",
+          "sentence": "Sie ___ kein Haus.",
+          "answers": [
+            "hat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson6",
+      "level": "A1.2",
+      "title": "Вопросы и отрицания",
+      "intro": "Как строить вопросы и отрицательные предложения",
+      "theory": [
+        {
+          "title": "Да/Нет вопросы",
+          "content": "Глагол на первое место: Bist du hier? (Ты здесь?) Подсказка: Для sein/haben используйте спряженную форму."
+        },
+        {
+          "title": "W-вопросы",
+          "content": "Wo (где), Was (что), Wer (кто), Wie (как). Вопросительное слово + глагол + подлежащее. Пример: Wo bist du? (Где ты?)"
+        },
+        {
+          "title": "Отрицания",
+          "content": "Nicht (не) после глагола. Kein (никакой) перед существительным. Пример: Ich gehe nicht. (Я не иду.) Подсказка: Kein склоняется как ein."
+        },
+        {
+          "title": "Построение",
+          "content": "В сложных: Nicht всегда после вспомогательного глагола."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Wo",
+          "ru": "где"
+        },
+        {
+          "de": "Was",
+          "ru": "что"
+        },
+        {
+          "de": "Wer",
+          "ru": "кто"
+        },
+        {
+          "de": "Wie",
+          "ru": "как"
+        },
+        {
+          "de": "nicht",
+          "ru": "не"
+        },
+        {
+          "de": "kein",
+          "ru": "никакой"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Вопрос: ___ bist du?",
+          "options": [
+            "Wo",
+            "Was",
+            "Wer"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Отрицание: Ich ___ gehe.",
+          "answer": "nicht"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери вопрос: 'Was ist das?'",
+          "pieces": [
+            "Was",
+            "ist",
+            "das?"
+          ],
+          "correct": [
+            "Was",
+            "ist",
+            "das?"
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: ___ du müde? (Bist)",
+          "sentence": "___ du müde? (Bist)",
+          "answers": [
+            "Bist"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь слова",
+          "pairs": [
+            {
+              "de": "Wo",
+              "ru": "где"
+            },
+            {
+              "de": "nicht",
+              "ru": "не"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши вопрос",
+          "phrase": "Wer bist du?"
+        },
+        {
+          "type": "mcq",
+          "question": "Отрицание с существительным: ___ Auto.",
+          "options": [
+            "nicht",
+            "kein",
+            "keine"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Вопрос: ___ heißt du?",
+          "answer": "Wie"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich habe kein Geld.'",
+          "pieces": [
+            "Ich",
+            "habe",
+            "kein",
+            "Geld."
+          ],
+          "correct": [
+            "Ich",
+            "habe",
+            "kein",
+            "Geld."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson7",
+      "level": "A1.2",
+      "title": "Цвета и описания",
+      "intro": "Цвета и как описывать предметы с прилагательными",
+      "theory": [
+        {
+          "title": "Цвета",
+          "content": "rot (красный), blau (синий), grün (зеленый), gelb (желтый), schwarz (черный), weiß (белый). Пример: Das Auto ist rot. (Машина красная.)"
+        },
+        {
+          "title": "Прилагательные после sein",
+          "content": "Прилагательные не склоняются после sein. Подсказка: Das ist groß. (Это большое.)"
+        },
+        {
+          "title": "Прилагательные с артиклями",
+          "content": "С определенным артиклем: der rote Apfel (красное яблоко). Склонение: -e в именительном. Подсказка: С неопределенным: ein roter Apfel."
+        },
+        {
+          "title": "Построение",
+          "content": "Прилагательное между артиклем и существительным."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "rot",
+          "ru": "красный"
+        },
+        {
+          "de": "blau",
+          "ru": "синий"
+        },
+        {
+          "de": "grün",
+          "ru": "зеленый"
+        },
+        {
+          "de": "gelb",
+          "ru": "желтый"
+        },
+        {
+          "de": "schwarz",
+          "ru": "черный"
+        },
+        {
+          "de": "weiß",
+          "ru": "белый"
+        },
+        {
+          "de": "groß",
+          "ru": "большой"
+        },
+        {
+          "de": "klein",
+          "ru": "маленький"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'синий'?",
+          "options": [
+            "rot",
+            "blau",
+            "grün"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'зеленый':",
+          "answer": "grün"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Das Haus ist ___. (белое)",
+          "sentence": "Das Haus ist ___. (белое)",
+          "answers": [
+            "weiß"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ein roter Apfel.'",
+          "pieces": [
+            "Ein",
+            "roter",
+            "Apfel."
+          ],
+          "correct": [
+            "Ein",
+            "roter",
+            "Apfel."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь цвета",
+          "pairs": [
+            {
+              "de": "gelb",
+              "ru": "желтый"
+            },
+            {
+              "de": "schwarz",
+              "ru": "черный"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши цвет",
+          "phrase": "blau"
+        },
+        {
+          "type": "mcq",
+          "question": "С определенным артиклем: der ___ Hund (большой).",
+          "options": [
+            "groß",
+            "große",
+            "großer"
+          ],
+          "answer": 2
+        },
+        {
+          "type": "input",
+          "question": "Описать: Das ist ___. (маленькое)",
+          "answer": "klein"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Die ___ Katze. (черная)",
+          "sentence": "Die ___ Katze. (черная)",
+          "answers": [
+            "schwarze"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson8",
+      "level": "A1.2",
+      "title": "Семья и possessive pronouns",
+      "intro": "Слова для семьи и притяжательные местоимения",
+      "theory": [
+        {
+          "title": "Семья",
+          "content": "die Mutter (мама), der Vater (папа), der Bruder (брат), die Schwester (сестра), das Kind (ребенок)."
+        },
+        {
+          "title": "Притяжательные местоимения",
+          "content": "mein (мой), dein (твой), sein (его), ihr (ее/их), unser (наш). Склоняются по роду. Пример: mein Bruder (мой брат)."
+        },
+        {
+          "title": "Использование",
+          "content": "Притяжательное + существительное. Подсказка: mein (муж/ср), meine (жен)."
+        },
+        {
+          "title": "Предложения",
+          "content": "Das ist meine Mutter. (Это моя мама.)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Mutter",
+          "ru": "мама"
+        },
+        {
+          "de": "Vater",
+          "ru": "папа"
+        },
+        {
+          "de": "Bruder",
+          "ru": "брат"
+        },
+        {
+          "de": "Schwester",
+          "ru": "сестра"
+        },
+        {
+          "de": "mein",
+          "ru": "мой"
+        },
+        {
+          "de": "dein",
+          "ru": "твой"
+        },
+        {
+          "de": "sein",
+          "ru": "его"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "'брат'?",
+          "options": [
+            "Mutter",
+            "Vater",
+            "Bruder"
+          ],
+          "answer": 2
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'сестра':",
+          "answer": "Schwester"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Das ist ___ Vater.",
+          "sentence": "Das ist ___ Vater.",
+          "answers": [
+            "mein"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Meine Schwester ist klein.'",
+          "pieces": [
+            "Meine",
+            "Schwester",
+            "ist",
+            "klein."
+          ],
+          "correct": [
+            "Meine",
+            "Schwester",
+            "ist",
+            "klein."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "unser",
+              "ru": "наш"
+            },
+            {
+              "de": "ihr",
+              "ru": "ее"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "mein Bruder"
+        },
+        {
+          "type": "mcq",
+          "question": "Для женского: ___ Schwester.",
+          "options": [
+            "mein",
+            "meine",
+            "meiner"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Притяжательное для 'du':",
+          "answer": "dein"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Sein ___ ist groß. (дом)",
+          "sentence": "Sein ___ ist groß. (дом)",
+          "answers": [
+            "Haus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson9",
+      "level": "A1.2",
+      "title": "Аккузатив (винительный падеж)",
+      "intro": "Когда использовать аккузатив и склонение артиклей",
+      "theory": [
+        {
+          "title": "Что такое аккузатив",
+          "content": "Падеж прямого дополнения. После глаголов как haben, sehen, essen. Пример: Ich sehe den Mann. (Я вижу мужчину.)"
+        },
+        {
+          "title": "Склонение артиклей",
+          "content": "Определенный: den (муж), die (жен), das (ср), die (мн). Неопределенный: einen (муж), eine (жен), ein (ср). Подсказка: Только мужской меняется."
+        },
+        {
+          "title": "Притяжательные в аккузативе",
+          "content": "meinen (муж), meine (жен), mein (ср)."
+        },
+        {
+          "title": "Построение",
+          "content": "Подлежащее + глагол + объект в аккузативе. Подсказка: Предлоги как durch, für требуют аккузатива."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "sehen",
+          "ru": "видеть"
+        },
+        {
+          "de": "essen",
+          "ru": "есть"
+        },
+        {
+          "de": "den",
+          "ru": "the (acc masc)"
+        },
+        {
+          "de": "einen",
+          "ru": "a (acc masc)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Аккузатив для 'der':",
+          "options": [
+            "der",
+            "den",
+            "dem"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Аккузатив для 'ein':",
+          "answer": "einen"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich esse ___ Apfel.",
+          "sentence": "Ich esse ___ Apfel.",
+          "answers": [
+            "den"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich sehe eine Frau.'",
+          "pieces": [
+            "Ich",
+            "sehe",
+            "eine",
+            "Frau."
+          ],
+          "correct": [
+            "Ich",
+            "sehe",
+            "eine",
+            "Frau."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь падежи",
+          "pairs": [
+            {
+              "de": "die",
+              "ru": "acc fem"
+            },
+            {
+              "de": "das",
+              "ru": "acc neut"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши в аккузативе",
+          "phrase": "den Hund"
+        },
+        {
+          "type": "mcq",
+          "question": "Притяжательное: meinen ___ (брат).",
+          "options": [
+            "Bruder",
+            "Bruders",
+            "Brudern"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Предлог для аккузатива: ___ das Haus. (через)",
+          "answer": "durch"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Für ___ Kind.",
+          "sentence": "Für ___ Kind.",
+          "answers": [
+            "das"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson10",
+      "level": "A1.3",
+      "title": "Датив (дательный падеж)",
+      "intro": "Датив для косвенного дополнения и склонение",
+      "theory": [
+        {
+          "title": "Что такое датив",
+          "content": "Для косвенного дополнения. После глаголов как geben, helfen. Пример: Ich gebe dem Mann das Buch. (Я даю мужчине книгу.)"
+        },
+        {
+          "title": "Склонение артиклей",
+          "content": "dem (муж/ср), der (жен), den (мн). Неопределенный: einem (муж/ср), einer (жен). Подсказка: Мужской и средний на dem/einem."
+        },
+        {
+          "title": "Предлоги с дативом",
+          "content": "aus, bei, mit, nach, von, zu. Пример: mit dem Freund (с другом)."
+        },
+        {
+          "title": "Построение",
+          "content": "Подлежащее + глагол + датив + аккузатив. Подсказка: Датив перед аккузативом если оба."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "geben",
+          "ru": "давать"
+        },
+        {
+          "de": "helfen",
+          "ru": "помогать"
+        },
+        {
+          "de": "dem",
+          "ru": "to the (dat masc)"
+        },
+        {
+          "de": "einem",
+          "ru": "to a (dat masc)"
+        },
+        {
+          "de": "mit",
+          "ru": "с"
+        },
+        {
+          "de": "bei",
+          "ru": "у"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Датив для 'der':",
+          "options": [
+            "der",
+            "den",
+            "dem"
+          ],
+          "answer": 2
+        },
+        {
+          "type": "input",
+          "question": "Датив для 'die':",
+          "answer": "der"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich helfe ___ Frau.",
+          "sentence": "Ich helfe ___ Frau.",
+          "answers": [
+            "der"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Mit einem Freund.'",
+          "pieces": [
+            "Mit",
+            "einem",
+            "Freund."
+          ],
+          "correct": [
+            "Mit",
+            "einem",
+            "Freund."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь предлоги",
+          "pairs": [
+            {
+              "de": "aus",
+              "ru": "из"
+            },
+            {
+              "de": "von",
+              "ru": "от"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши в датив",
+          "phrase": "dem Kind"
+        },
+        {
+          "type": "mcq",
+          "question": "Глагол с дативом: ___ dem Mann das Buch.",
+          "options": [
+            "gebe",
+            "geben",
+            "gibt"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Предлог: ___ Hause. (дома)",
+          "answer": "zu"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Von ___ Vater.",
+          "sentence": "Von ___ Vater.",
+          "answers": [
+            "dem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson11",
+      "level": "A1.3",
+      "title": "Множественное число существительных",
+      "intro": "Как образовать plural и артикли во множественном",
+      "theory": [
+        {
+          "title": "Образование plural",
+          "content": "Добавьте -e, -er, -n/en, -s. Пример: der Apfel - die Äpfel (яблоки). Подсказка: Многие женские на -en."
+        },
+        {
+          "title": "Артикли во множественном",
+          "content": "die (определенный), keine (отрицание). Нет неопределенного артикля во мн. Пример: die Bücher (книги)."
+        },
+        {
+          "title": "Склонение в plural",
+          "content": "Аккузатив: die, Датив: den. Подсказка: Всегда die в именительном/аккузативе."
+        },
+        {
+          "title": "Предложения",
+          "content": "Ich habe drei Äpfel. (У меня три яблока.)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Äpfel",
+          "ru": "яблоки"
+        },
+        {
+          "de": "Bücher",
+          "ru": "книги"
+        },
+        {
+          "de": "Kinder",
+          "ru": "дети"
+        },
+        {
+          "de": "Autos",
+          "ru": "машины"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Plural 'das Kind':",
+          "options": [
+            "Kinde",
+            "Kinder",
+            "Kinds"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Plural 'der Apfel':",
+          "answer": "Äpfel"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Die ___ sind rot. (яблоки)",
+          "sentence": "Die ___ sind rot. (яблоки)",
+          "answers": [
+            "Äpfel"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich sehe die Bücher.'",
+          "pieces": [
+            "Ich",
+            "sehe",
+            "die",
+            "Bücher."
+          ],
+          "correct": [
+            "Ich",
+            "sehe",
+            "die",
+            "Bücher."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь plural",
+          "pairs": [
+            {
+              "de": "Auto",
+              "ru": "Autos"
+            },
+            {
+              "de": "Buch",
+              "ru": "Bücher"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши plural",
+          "phrase": "Kinder"
+        },
+        {
+          "type": "mcq",
+          "question": "Датив plural: ___ Kindern.",
+          "options": [
+            "die",
+            "den",
+            "dem"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Отрицание: ___ Autos.",
+          "answer": "keine"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Zwei ___. (машины)",
+          "sentence": "Zwei ___. (машины)",
+          "answers": [
+            "Autos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson12",
+      "level": "A1.3",
+      "title": "Прилагательные и их склонение",
+      "intro": "Полное склонение прилагательных в разных падежах",
+      "theory": [
+        {
+          "title": "После определенного артикля",
+          "content": "-e во всех родах/падежах (кроме генитива). Пример: der große Mann (большой мужчина)."
+        },
+        {
+          "title": "После неопределенного",
+          "content": "-er (муж nom), -en (муж acc/dat), -e (жен/ср). Пример: ein großer Mann."
+        },
+        {
+          "title": "Без артикля",
+          "content": "-er (муж nom), -es (ср nom/acc), -e (жен nom/acc). Подсказка: Прилагательное берет на себя роль артикля."
+        },
+        {
+          "title": "В plural",
+          "content": "-en после die, -e после keine. Пример: große Häuser."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "groß",
+          "ru": "большой"
+        },
+        {
+          "de": "klein",
+          "ru": "маленький"
+        },
+        {
+          "de": "neu",
+          "ru": "новый"
+        },
+        {
+          "de": "alt",
+          "ru": "старый"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "der ___ Mann (большой).",
+          "options": [
+            "groß",
+            "große",
+            "großer"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "ein ___ Auto (новое).",
+          "answer": "neues"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Die ___ Häuser. (старые)",
+          "sentence": "Die ___ Häuser. (старые)",
+          "answers": [
+            "alten"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ein kleines Kind.'",
+          "pieces": [
+            "Ein",
+            "kleines",
+            "Kind."
+          ],
+          "correct": [
+            "Ein",
+            "kleines",
+            "Kind."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь окончания",
+          "pairs": [
+            {
+              "de": "masc nom no art",
+              "ru": "-er"
+            },
+            {
+              "de": "fem acc def art",
+              "ru": "-e"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши прилагательное",
+          "phrase": "großer Hund"
+        },
+        {
+          "type": "mcq",
+          "question": "Без артикля: ___ Frau (красивая).",
+          "options": [
+            "schöne",
+            "schöner",
+            "schönes"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Plural: neue ___.",
+          "answer": "Autos"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Dem ___ Mann. (старому)",
+          "sentence": "Dem ___ Mann. (старому)",
+          "answers": [
+            "alten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson13",
+      "level": "A2.1",
+      "title": "Настоящее время регулярных глаголов",
+      "intro": "Спряжение регулярных глаголов в Präsens",
+      "theory": [
+        {
+          "title": "Спряжение",
+          "content": "Ствол + -e (ich), -st (du), -t (er), -en (wir), -t (ihr), -en (sie). Пример: machen - ich mache."
+        },
+        {
+          "title": "Использование",
+          "content": "Для настоящего и будущего. Подсказка: Если ствол на -t/d, добавьте -e перед -st/-t."
+        },
+        {
+          "title": "Положение в предложении",
+          "content": "Глагол всегда на втором месте. Пример: Ich mache Hausaufgaben. (Я делаю домашку.)"
+        },
+        {
+          "title": "Модели",
+          "content": "arbeiten (работать), lernen (учиться)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "machen",
+          "ru": "делать"
+        },
+        {
+          "de": "arbeiten",
+          "ru": "работать"
+        },
+        {
+          "de": "lernen",
+          "ru": "учиться"
+        },
+        {
+          "de": "spielen",
+          "ru": "играть"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "du ___ (machen).",
+          "options": [
+            "mache",
+            "machst",
+            "macht"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "er ___ (arbeiten).",
+          "answer": "arbeitet"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Wir ___ Deutsch. (учимся)",
+          "sentence": "Wir ___ Deutsch. (учимся)",
+          "answers": [
+            "lernen"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich spiele Fußball.'",
+          "pieces": [
+            "Ich",
+            "spiele",
+            "Fußball."
+          ],
+          "correct": [
+            "Ich",
+            "spiele",
+            "Fußball."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь спряжения",
+          "pairs": [
+            {
+              "de": "ihr",
+              "ru": "spielt"
+            },
+            {
+              "de": "sie",
+              "ru": "spielen"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши глагол",
+          "phrase": "macht"
+        },
+        {
+          "type": "mcq",
+          "question": "С -t: du ___ (warten).",
+          "options": [
+            "wartst",
+            "wartest",
+            "wartt"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "wir ___ (machen).",
+          "answer": "machen"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Sie ___ nicht. (работает)",
+          "sentence": "Sie ___ nicht. (работает)",
+          "answers": [
+            "arbeitet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson14",
+      "level": "A2.1",
+      "title": "Прошедшее время (Perfekt)",
+      "intro": "Составное прошедшее с haben/sein",
+      "theory": [
+        {
+          "title": "Структура",
+          "content": "haben/sein (в Präsens) + Partizip II. Пример: Ich habe gegessen. (Я поел.)"
+        },
+        {
+          "title": "Partizip II",
+          "content": "ge- + ствол + -t (регулярные). Нерегулярные: essen - gegessen. Подсказка: sein для движения/изменения состояния."
+        },
+        {
+          "title": "Положение",
+          "content": "Вспомогательный на втором, Partizip в конце. Пример: Ich bin nach Hause gegangen."
+        },
+        {
+          "title": "Подсказки",
+          "content": "Большинство с haben. Sein: gehen, kommen, werden."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "gegessen",
+          "ru": "съедено"
+        },
+        {
+          "de": "gemacht",
+          "ru": "сделано"
+        },
+        {
+          "de": "gekommen",
+          "ru": "пришел"
+        },
+        {
+          "de": "gegangen",
+          "ru": "ушел"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Ich ___ gegessen.",
+          "options": [
+            "habe",
+            "bin",
+            "hat"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Partizip für 'machen':",
+          "answer": "gemacht"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Er ist ___ . (пришел)",
+          "sentence": "Er ist ___ . (пришел)",
+          "answers": [
+            "gekommen"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich habe das Buch gelesen.'",
+          "pieces": [
+            "Ich",
+            "habe",
+            "das",
+            "Buch",
+            "gelesen."
+          ],
+          "correct": [
+            "Ich",
+            "habe",
+            "das",
+            "Buch",
+            "gelesen."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "gehen",
+              "ru": "gegangen"
+            },
+            {
+              "de": "essen",
+              "ru": "gegessen"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши в Perfekt",
+          "phrase": "habe gearbeitet"
+        },
+        {
+          "type": "mcq",
+          "question": "С sein: Ich ___ gefahren.",
+          "options": [
+            "habe",
+            "bin",
+            "hat"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "du ___ gemacht.",
+          "answer": "hast"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Wir sind ___ . (ушли)",
+          "sentence": "Wir sind ___ . (ушли)",
+          "answers": [
+            "gegangen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson15",
+      "level": "A2.1",
+      "title": "Будущее время (Futur I)",
+      "intro": "Werden + Infinitiv для будущего",
+      "theory": [
+        {
+          "title": "Структура",
+          "content": "werden (спряженный) + Infinitiv в конце. Пример: Ich werde kommen. (Я приду.)"
+        },
+        {
+          "title": "Спряжение werden",
+          "content": "ich werde, du wirst, er wird, wir werden, ihr werdet, sie werden."
+        },
+        {
+          "title": "Использование",
+          "content": "Для планов. Подсказка: Часто заменяется Präsens с adverbien как morgen."
+        },
+        {
+          "title": "Предложения",
+          "content": "Morgen werde ich essen. (Завтра я поем.)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "werde",
+          "ru": "will (ich)"
+        },
+        {
+          "de": "wirst",
+          "ru": "will (du)"
+        },
+        {
+          "de": "wird",
+          "ru": "will (er)"
+        },
+        {
+          "de": "morgen",
+          "ru": "завтра"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "du ___ kommen.",
+          "options": [
+            "werde",
+            "wirst",
+            "wird"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "er ___ essen.",
+          "answer": "wird"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich ___ lernen.",
+          "sentence": "Ich ___ lernen.",
+          "answers": [
+            "werde"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Wir werden spielen.'",
+          "pieces": [
+            "Wir",
+            "werden",
+            "spielen."
+          ],
+          "correct": [
+            "Wir",
+            "werden",
+            "spielen."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "ihr",
+              "ru": "werdet"
+            },
+            {
+              "de": "sie",
+              "ru": "werden"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши в Futur",
+          "phrase": "wird gehen"
+        },
+        {
+          "type": "mcq",
+          "question": "Morgen ___ ich.",
+          "options": [
+            "werde",
+            "wirst",
+            "bin"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "wir ___ machen.",
+          "answer": "werden"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Sie ___ nicht kommen.",
+          "sentence": "Sie ___ nicht kommen.",
+          "answers": [
+            "wird"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson16",
+      "level": "A2.2",
+      "title": "Модальные глаголы",
+      "intro": "können, müssen, wollen и т.д. с infinitiv",
+      "theory": [
+        {
+          "title": "Спряжение модальных",
+          "content": "können: ich kann, du kannst, er kann. Аналогично müssen, wollen, sollen, mögen, dürfen."
+        },
+        {
+          "title": "Структура",
+          "content": "Модальный (спряженный) + infinitiv в конце. Пример: Ich kann schwimmen. (Я могу плавать.)"
+        },
+        {
+          "title": "Значения",
+          "content": "können (могу), müssen (должен), wollen (хочу). Подсказка: Модальный на втором месте, основной глагол в конце."
+        },
+        {
+          "title": "Отрицание",
+          "content": "Nicht после модального или перед infinitiv."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "können",
+          "ru": "мочь"
+        },
+        {
+          "de": "müssen",
+          "ru": "долженствовать"
+        },
+        {
+          "de": "wollen",
+          "ru": "хотеть"
+        },
+        {
+          "de": "sollen",
+          "ru": "следовать"
+        },
+        {
+          "de": "dürfen",
+          "ru": "иметь разрешение"
+        },
+        {
+          "de": "mögen",
+          "ru": "нравиться"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Ich ___ gehen. (могу)",
+          "options": [
+            "kann",
+            "kannst",
+            "können"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "du ___ lernen. (должен)",
+          "answer": "musst"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Er ___ essen. (хочет)",
+          "sentence": "Er ___ essen. (хочет)",
+          "answers": [
+            "will"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich muss arbeiten.'",
+          "pieces": [
+            "Ich",
+            "muss",
+            "arbeiten."
+          ],
+          "correct": [
+            "Ich",
+            "muss",
+            "arbeiten."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь модальные",
+          "pairs": [
+            {
+              "de": "dürfen",
+              "ru": "мочь (разрешение)"
+            },
+            {
+              "de": "mögen",
+              "ru": "нравиться"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши модальный",
+          "phrase": "kann schwimmen"
+        },
+        {
+          "type": "mcq",
+          "question": "Отрицание: Ich ___ nicht.",
+          "options": [
+            "kann",
+            "muss",
+            "will"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "wir ___ spielen. (должны)",
+          "answer": "sollen"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Sie ___ nicht rauchen. (не разрешается)",
+          "sentence": "Sie ___ nicht rauchen. (не разрешается)",
+          "answers": [
+            "dürfen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson17",
+      "level": "A2.2",
+      "title": "Предлоги с аккузативом и дативом",
+      "intro": "Двойные предлоги и их использование",
+      "theory": [
+        {
+          "title": "Двойные предлоги",
+          "content": "an, auf, hinter, in, neben, über, unter, vor, zwischen. Датив для места (wo?), аккузатив для направления (wohin?)."
+        },
+        {
+          "title": "Примеры",
+          "content": "Ich gehe in die Schule (направление, acc). Ich bin in der Schule (место, dat)."
+        },
+        {
+          "title": "Склонение",
+          "content": "После предлога артикль сливается: in dem = im, zu dem = zum. Подсказка: Запоминайте wo? - dat, wohin? - acc."
+        },
+        {
+          "title": "Предложения",
+          "content": "Das Buch liegt auf dem Tisch. (Книга лежит на столе.)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "an",
+          "ru": "у"
+        },
+        {
+          "de": "auf",
+          "ru": "на"
+        },
+        {
+          "de": "in",
+          "ru": "в"
+        },
+        {
+          "de": "unter",
+          "ru": "под"
+        },
+        {
+          "de": "vor",
+          "ru": "перед"
+        },
+        {
+          "de": "hinter",
+          "ru": "за"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Направление: in ___ Schule (die).",
+          "options": [
+            "die",
+            "der",
+            "dem"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Место: auf ___ Tisch (dem).",
+          "answer": "dem"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich lege das Buch ___ den Tisch. (на)",
+          "sentence": "Ich lege das Buch ___ den Tisch. (на)",
+          "answers": [
+            "auf"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich bin in der Stadt.'",
+          "pieces": [
+            "Ich",
+            "bin",
+            "in",
+            "der",
+            "Stadt."
+          ],
+          "correct": [
+            "Ich",
+            "bin",
+            "in",
+            "der",
+            "Stadt."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "hinter",
+              "ru": "за"
+            },
+            {
+              "de": "vor",
+              "ru": "перед"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши предлог",
+          "phrase": "unter dem Bett"
+        },
+        {
+          "type": "mcq",
+          "question": "Слияние: an ___ Wand.",
+          "options": [
+            "die",
+            "der",
+            "dem"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "wo? - ___ dem Haus.",
+          "answer": "vor"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Geh ___ das Zimmer. (в)",
+          "sentence": "Geh ___ das Zimmer. (в)",
+          "answers": [
+            "in"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson18",
+      "level": "A2.2",
+      "title": "Сложные предложения с weil и dass",
+      "intro": "Подчиненные предложения и порядок слов",
+      "theory": [
+        {
+          "title": "Weil (потому что)",
+          "content": "Главное + weil + подчиненное (глагол в конце). Пример: Ich lerne, weil ich will. (Я учусь, потому что хочу.)"
+        },
+        {
+          "title": "Dass (что)",
+          "content": "Ich weiß, dass du kommst. (Я знаю, что ты приходишь.) Глагол в конце подчиненного."
+        },
+        {
+          "title": "Порядок слов",
+          "content": "В подчиненном: подлежащее + ... + глагол. Подсказка: После запятой."
+        },
+        {
+          "title": "Другие союзы",
+          "content": "wenn (если), obwohl (хотя)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "weil",
+          "ru": "потому что"
+        },
+        {
+          "de": "dass",
+          "ru": "что"
+        },
+        {
+          "de": "wenn",
+          "ru": "если"
+        },
+        {
+          "de": "obwohl",
+          "ru": "хотя"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Ich gehe, ___ ich müde bin.",
+          "options": [
+            "weil",
+            "dass",
+            "wenn"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Ich denke, ___ es regnet.",
+          "answer": "dass"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Er kommt, ___ er kann.",
+          "sentence": "Er kommt, ___ er kann.",
+          "answers": [
+            "wenn"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Ich esse, weil ich Hunger habe.'",
+          "pieces": [
+            "Ich",
+            "esse,",
+            "weil",
+            "ich",
+            "Hunger",
+            "habe."
+          ],
+          "correct": [
+            "Ich",
+            "esse,",
+            "weil",
+            "ich",
+            "Hunger",
+            "habe."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь союзы",
+          "pairs": [
+            {
+              "de": "obwohl",
+              "ru": "хотя"
+            },
+            {
+              "de": "wenn",
+              "ru": "если"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши союз",
+          "phrase": "weil ich lerne"
+        },
+        {
+          "type": "mcq",
+          "question": "Глагол в конце: Ich weiß, dass du ___ .",
+          "options": [
+            "kommst",
+            "komm",
+            "komme"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Хотя: ___, es ist kalt.",
+          "answer": "obwohl"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich bleibe zu Hause, ___ es regnet.",
+          "sentence": "Ich bleibe zu Hause, ___ es regnet.",
+          "answers": [
+            "weil"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson19",
+      "level": "A2.3",
+      "title": "Генитив (родительный падеж)",
+      "intro": "Генитив для принадлежности",
+      "theory": [
+        {
+          "title": "Склонение",
+          "content": "des (муж/ср), der (жен/мн). Пример: das Haus des Mannes (дом мужчины)."
+        },
+        {
+          "title": "Предлоги с генитивом",
+          "content": "wegen (из-за), während (во время), statt (вместо). Подсказка: В современном часто заменяется von + dat."
+        },
+        {
+          "title": "Использование",
+          "content": "Для принадлежности: der Name der Stadt (имя города)."
+        },
+        {
+          "title": "Подсказки",
+          "content": "Существительные в генитиве добавляют -s (муж/ср)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "des",
+          "ru": "of the (gen masc)"
+        },
+        {
+          "de": "der",
+          "ru": "of the (gen fem)"
+        },
+        {
+          "de": "wegen",
+          "ru": "из-за"
+        },
+        {
+          "de": "während",
+          "ru": "во время"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Генитив 'der Mann':",
+          "options": [
+            "des Mannes",
+            "dem Mann",
+            "den Mann"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Генитив 'die Frau':",
+          "answer": "der Frau"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Das Buch ___ Kindes.",
+          "sentence": "Das Buch ___ Kindes.",
+          "answers": [
+            "des"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Wegen des Wetters.'",
+          "pieces": [
+            "Wegen",
+            "des",
+            "Wetters."
+          ],
+          "correct": [
+            "Wegen",
+            "des",
+            "Wetters."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "statt",
+              "ru": "вместо"
+            },
+            {
+              "de": "während",
+              "ru": "во время"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши в генитив",
+          "phrase": "des Hauses"
+        },
+        {
+          "type": "mcq",
+          "question": "Во время: ___ der Stunde.",
+          "options": [
+            "wegen",
+            "während",
+            "statt"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Из-за: ___ des Regens.",
+          "answer": "wegen"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Der Name ___ Stadt.",
+          "sentence": "Der Name ___ Stadt.",
+          "answers": [
+            "der"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson20",
+      "level": "A2.3",
+      "title": "Сложные предложения с wenn и als",
+      "intro": "Условные и временные придаточные",
+      "theory": [
+        {
+          "title": "Wenn (если/когда)",
+          "content": "Для условий или будущего времени. Глагол в конце. Пример: Wenn es regnet, bleibe ich zu Hause."
+        },
+        {
+          "title": "Als (когда, в прошлом)",
+          "content": "Для прошлого. Als ich Kind war... (Когда я был ребенком...)"
+        },
+        {
+          "title": "Порядок",
+          "content": "Придаточное может быть первым: Wenn du kommst, essen wir. Подсказка: После придаточного глагол в главном на первом месте."
+        },
+        {
+          "title": "Подсказки",
+          "content": "Wenn для повторяющихся, als для однократного в прошлом."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "wenn",
+          "ru": "если/когда"
+        },
+        {
+          "de": "als",
+          "ru": "когда (прошлое)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "___ es schneit, gehe ich Ski fahren.",
+          "options": [
+            "Wenn",
+            "Als",
+            "Weil"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "___ ich klein war, spielte ich viel.",
+          "answer": "Als"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: ___ du Zeit hast, ruf mich an.",
+          "sentence": "___ du Zeit hast, ruf mich an.",
+          "answers": [
+            "Wenn"
+          ]
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Als er kam, war ich weg.'",
+          "pieces": [
+            "Als",
+            "er",
+            "kam,",
+            "war",
+            "ich",
+            "weg."
+          ],
+          "correct": [
+            "Als",
+            "er",
+            "kam,",
+            "war",
+            "ich",
+            "weg."
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "wenn",
+              "ru": "если"
+            },
+            {
+              "de": "als",
+              "ru": "когда (past)"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "phrase": "wenn du kommst"
+        },
+        {
+          "type": "mcq",
+          "question": "Глагол в конце: Wenn ich ___ , ...",
+          "options": [
+            "gehe",
+            "gehst",
+            "gehe"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "input",
+          "question": "Когда (past): ___ wir Kinder waren.",
+          "answer": "Als"
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Ich esse, ___ ich Hunger habe.",
+          "sentence": "Ich esse, ___ ich Hunger habe.",
+          "answers": [
+            "wenn"
+          ]
+        }
       ]
     }
   ]

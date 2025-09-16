@@ -24,20 +24,43 @@ function renderIndex() {
   const container = qs("#lessons");
   if (!container) return;
   container.innerHTML = "";
+  
   LESSONS.forEach((ls, idx) => {
-    const donePrev = idx === 0 ? true : localStorage.getItem("berlingo_done_" + LESSONS[idx - 1].id) === "1";
-    const done = localStorage.getItem("berlingo_done_" + ls.id) === "1";
+    // Проверяем, полностью ли пройден предыдущий урок
+    const prevLesson = idx > 0 ? LESSONS[idx - 1] : null;
+    const prevDone = prevLesson ? isLessonComplete(prevLesson.id) : true;
+    
+    // Проверяем, полностью ли пройден текущий урок
+    const currentDone = isLessonComplete(ls.id);
+    
     const div = document.createElement("div");
-    div.className = "lesson-card" + (!donePrev ? " locked" : "");
-    div.style = 'position: relative;'
-    let actionHtml = !donePrev
+    div.className = "lesson-card" + (!prevDone ? " locked" : "");
+    div.style = 'position: relative;';
+    
+    let actionHtml = !prevDone
       ? '<div class="lock-badge"><i class="fas fa-lock"></i> После предыдущего</div>'
-      : `<a class="btn" style="position: absolute; right: 10px; bottom: 10px" href="lessons.html?lesson=${idx + 1}">${done ? '<i class="fas fa-redo"></i> Повторить' : '<i class="fas fa-play"></i> Начать'}</a>`;
+      : `<a class="btn" style="position: absolute; right: 10px; bottom: 10px" href="lessons.html?lesson=${idx + 1}">${currentDone ? '<i class="fas fa-redo"></i> Повторить' : '<i class="fas fa-play"></i> Начать'}</a>`;
+    
     div.innerHTML = `<div><h3>${ls.title}</h3><div class="lesson-meta">${ls.level} • ${ls.intro}</div></div><div>${
-      done ? '<span class="small"><i class="fas fa-check-circle" style="color:var(--success)"></i> Пройден</span>' : '<span class="small"><i class="fas fa-unlock"></i> Доступно</span>'
+      currentDone ? '<span class="small"><i class="fas fa-check-circle" style="color:var(--success)"></i> Пройден</span>' : '<span class="small"><i class="fas fa-unlock"></i> Доступно</span>'
     }${actionHtml}</div>`;
+    
     container.appendChild(div);
   });
+}
+
+function isLessonComplete(lessonId) {
+  // Проверяем, отмечен ли урок как пройденный
+  const isMarkedDone = localStorage.getItem("berlingo_done_" + lessonId) === "1";
+  
+  // Дополнительная проверка: если урок пройден, но у пользоваля 0 сердец,
+  // считаем его не пройденным (опционально)
+  const heartsLeft = localStorage.getItem("berlingo_hearts_" + lessonId);
+  if (isMarkedDone && heartsLeft !== null && parseInt(heartsLeft) === 0) {
+    return false; // Урок "провален", нужно перепроходить
+  }
+  
+  return isMarkedDone;
 }
 
 function renderLessonIfNeeded() {
@@ -267,11 +290,13 @@ function renderLessonIfNeeded() {
       checkBtn.addEventListener("click", () => handleMatch(exEl, ex.pairs, matchEl));
       checkControls.appendChild(checkBtn);
     } else if (ex.type === "fill_blank") {
-      let sentence = ex.sentence;
-      ex.answers.forEach((_, i) => {
-        sentence = sentence.replace("___", '<input class="blank-input input-answer small" placeholder="..." />');
+      ex.answers.forEach(() => {
+        const input = document.createElement("input");
+        input.className = "blank-input input-answer small";
+        input.placeholder = "...";
+        exContent.appendChild(input);
       });
-      exContent.innerHTML += `<div>${sentence}</div>`;
+      addSpecialChars(exContent);
       const checkBtn = document.createElement("button");
       checkBtn.className = "btn check-fill";
       checkBtn.innerHTML = '<i class="fas fa-check"></i> Проверить';
@@ -480,8 +505,12 @@ function renderLessonIfNeeded() {
   }
 
   function completeLesson(id) {
+    // Сохраняем не только статус завершения, но и количество оставшихся сердец
     localStorage.setItem("berlingo_done_" + id, "1");
-    content.innerHTML = '<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ' + POINTS + '</p><div class="controls"><a class="btn" href="index.html"><i class="fas fa-arrow-left"></i> К модулям</a></div></div>';
+    localStorage.setItem("berlingo_hearts_" + id, HEARTS.toString());
+    localStorage.setItem("berlingo_points_" + id, POINTS.toString());
+    
+    content.innerHTML = '<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ' + POINTS + ', Осталось жизней: ' + HEARTS + '</p><div class="controls"><a class="btn" href="index.html"><i class="fas fa-arrow-left"></i> К модулям</a></div></div>';
   }
 
   function enableStep(i) {
