@@ -1,4 +1,3 @@
-
 /*
   exercises.js
   - Single entry point: renderExercise(ex, opts)
@@ -99,31 +98,47 @@ window.BERLINGO.exercise = (function (h, ui) {
       });
       checkControls.appendChild(checkBtn);
     } else if (ex.type === "reorder") {
-      const containerPieces = document.createElement("div");
-      containerPieces.className = "reorder-container";
+      const sentenceContainer = document.createElement("div");
+      sentenceContainer.className = "reorder-sentence";
+      exContent.appendChild(sentenceContainer);
+
+      const piecesContainer = document.createElement("div");
+      piecesContainer.className = "reorder-pieces";
+
+      function handlePieceClick(e) {
+        const piece = e.target;
+        if (piece.parentNode === piecesContainer) {
+          sentenceContainer.appendChild(piece);
+        } else if (piece.parentNode === sentenceContainer) {
+          piecesContainer.appendChild(piece);
+        }
+      }
+
       ex.pieces.forEach(p => {
         const piece = document.createElement("div");
         piece.className = "piece";
-        piece.draggable = true;
         piece.textContent = p;
-        containerPieces.appendChild(piece);
+        piece.addEventListener("click", handlePieceClick);
+        piecesContainer.appendChild(piece);
       });
-      exContent.appendChild(containerPieces);
-      h.addDnDHandlers(containerPieces);
+      exContent.appendChild(piecesContainer);
 
       const checkBtn = document.createElement("button");
       checkBtn.className = "btn";
       checkBtn.type = "button";
       checkBtn.innerHTML = '<i class="fas fa-check"></i> Проверить';
       checkBtn.addEventListener("click", () => {
-        const current = Array.from(containerPieces.querySelectorAll(".piece")).map(p => p.textContent);
+        const current = Array.from(sentenceContainer.children).map(p => p.textContent.trim());
         const isCorrect = current.join(" ") === (ex.correct || []).join(" ");
         resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
         if (!isCorrect) {
           correctAnswerEl.textContent = `Правильный порядок: ${(ex.correct || []).join(" ")}`;
           correctAnswerEl.style.display = "block";
         }
-        Array.from(containerPieces.querySelectorAll(".piece")).forEach(p => p.draggable = false);
+        // Отключаем дальнейшие клики
+        Array.from(exContent.querySelectorAll(".piece")).forEach(p => {
+          p.style.pointerEvents = "none";
+        });
         document.querySelector(".check-controls").style.display = "none";
         checkBtn.disabled = true;
         finish(isCorrect);

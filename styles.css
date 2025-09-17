@@ -203,3 +203,47 @@ footer > div:nth-child(2) {
     margin-bottom: 10px;
   }
 }
+
+.reorder-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-height: 40px;
+  border: 1px dashed var(--muted);
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.reorder-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.piece {
+  padding: 4px 8px;
+  background: var(--card);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.piece:hover {
+  transform: scale(1.05);
+}
+
+/* Адаптив для мобильных: уменьшаем gap */
+@media (max-width: 600px) {
+  .reorder-sentence {
+    gap: 2px;
+    padding: 6px;
+  }
+  .reorder-pieces {
+    gap: 6px;
+  }
+  .piece {
+    padding: 3px 6px;
+    font-size: 14px;
+  }
+}
