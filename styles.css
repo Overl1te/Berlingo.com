@@ -143,15 +143,24 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
 
 footer {
   margin-top: 40px;
-  padding: 20px 0;
+  padding: 10px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
   color: var(--muted);
   font-size: 13px;
+}
+
+.footer-main {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.version {
+    margin: 10px 0px;
+    opacity: 0.3;
+    width: auto;
 }
 
 footer > div:nth-child(2) {

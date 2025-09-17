@@ -245,6 +245,7 @@ window.BERLINGO.helpers = (function () {
     const leftEls = Array.from(scopeEl.querySelectorAll(".match-left"));
     const rightEls = Array.from(scopeEl.querySelectorAll(".match-right"));
     leftEls.forEach(l => l.addEventListener("click", () => {
+      speak(l.textContent);  // Произносить немецкое слово при клике (в форме как написано)
       if (l.classList.contains("matched")) return;
       if (left) left.classList.remove("selected");
       left = l;

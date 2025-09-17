@@ -46,6 +46,9 @@ window.BERLINGO.exercise = (function (h, ui) {
         btn.textContent = opt;
         btn.addEventListener("click", () => {
           const isCorrect = i === ex.answer;
+          if (isCorrect) {
+            h.speak(opt);  // Произносить только правильный вариант при выборе
+          }
           resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
           Array.from(exContent.querySelectorAll(".mcq-option")).forEach(b => b.disabled = true);
           finish(isCorrect);
@@ -91,6 +94,9 @@ window.BERLINGO.exercise = (function (h, ui) {
           correctAnswerEl.textContent = `Правильный ответ: ${Array.isArray(ex.answers) ? ex.answers[0] : ex.answer}`;
           correctAnswerEl.style.display = "block";
         }
+        if (isCorrect) {
+          h.speak(Array.isArray(ex.answers) ? ex.answers[0] : ex.answer);  // Произносить правильный ответ (в uppercase-форме из JSON)
+        }
         document.querySelector(".check-controls").style.display = "none";
         inp.disabled = true;
         checkBtn.disabled = true;
@@ -114,11 +120,15 @@ window.BERLINGO.exercise = (function (h, ui) {
         }
       }
 
-      ex.pieces.forEach(p => {
+      const shuffledPieces = [...ex.pieces].sort(() => Math.random() - 0.5);  // Перемешиваем слова
+      shuffledPieces.forEach(p => {
         const piece = document.createElement("div");
         piece.className = "piece";
         piece.textContent = p;
-        piece.addEventListener("click", handlePieceClick);
+        piece.addEventListener("click", (e) => {
+          h.speak(p);  // Произносить слово при клике (в форме как написано)
+          handlePieceClick(e);
+        });
         piecesContainer.appendChild(piece);
       });
       exContent.appendChild(piecesContainer);
@@ -134,6 +144,9 @@ window.BERLINGO.exercise = (function (h, ui) {
         if (!isCorrect) {
           correctAnswerEl.textContent = `Правильный порядок: ${(ex.correct || []).join(" ")}`;
           correctAnswerEl.style.display = "block";
+        }
+        if (isCorrect) {
+          h.speak((ex.correct || []).join(" "));  // Произносить только правильную фразу после проверки
         }
         // Отключаем дальнейшие клики
         Array.from(exContent.querySelectorAll(".piece")).forEach(p => {
