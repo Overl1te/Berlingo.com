@@ -10,6 +10,32 @@ window.BERLINGO.helpers = (function () {
   function qs(s, r = document) { return r.querySelector(s); }
   function qsa(s, r = document) { return Array.from(r.querySelectorAll(s)); }
 
+  function warmUpSpeech(timeout = 700) {
+    return new Promise((resolve) => {
+      if (!("speechSynthesis" in window)) return resolve(false);
+
+      let resolved = false;
+      function finish(val) { if (!resolved) { resolved = true; resolve(val); } }
+
+      // короткая "немая" попытка — пробуем пустой/пробельный utterance
+      try {
+        const u = new SpeechSynthesisUtterance(" ");
+        u.volume = 0;
+        u.rate = 1;
+        u.pitch = 1;
+        u.onend = () => finish(true);
+        u.onerror = () => finish(false);
+        // 일부 브라우저는 пустую строку игнорируют, но попытка всё равно может "прогреть" движок
+        speechSynthesis.speak(u);
+      } catch (e) {
+        // если speak бросил — всё равно продолжаем к таймауту
+      }
+
+      // если событие onend не произойдет — всё равно резолвим через timeout
+      setTimeout(() => finish(true), timeout);
+    });
+  }
+
   // Storage helpers
   function markDone(id, hearts, points) {
     localStorage.setItem("berlingo_done_" + id, "1");
@@ -25,12 +51,70 @@ window.BERLINGO.helpers = (function () {
   }
 
   // Speech
+  let voicesLoaded = false;
+  let germanVoices = [];
+
+  // Функция для загрузки голосов
+  function loadVoices(timeout = 4000) {
+    return new Promise((resolve) => {
+      if (!("speechSynthesis" in window)) return resolve([]);
+
+      const start = Date.now();
+
+      function trySet() {
+        const all = speechSynthesis.getVoices() || [];
+        const de = all.filter(v => v.lang && v.lang.toLowerCase().startsWith("de"));
+        if (de.length > 0) {
+          germanVoices = de;
+          voicesLoaded = true;
+          resolve(de);
+          return true;
+        }
+        return false;
+      }
+
+      // пробуем сразу
+      if (trySet()) return;
+
+      // handler для voiceschanged
+      function onVoicesChanged() {
+        if (trySet()) cleanup();
+      }
+      function cleanup() {
+        speechSynthesis.removeEventListener("voiceschanged", onVoicesChanged);
+        clearInterval(interval);
+      }
+
+      speechSynthesis.addEventListener("voiceschanged", onVoicesChanged);
+
+      // polling на случай, если voiceschanged не сработает мгновенно
+      const interval = setInterval(() => {
+        if (trySet()) { cleanup(); return; }
+        if (Date.now() - start > timeout) {
+          // таймаут — возвращаем текущее состояние (возможно пустой массив)
+          cleanup();
+          const fallback = (speechSynthesis.getVoices() || []).filter(v => v.lang && v.lang.toLowerCase().startsWith("de"));
+          if (fallback.length > 0) {
+            germanVoices = fallback;
+            voicesLoaded = true;
+          }
+          resolve(fallback);
+        }
+      }, 200);
+    });
+  }
+
+  // Обновленная функция speak
   function speak(text) {
     if (!("speechSynthesis" in window)) return;
+    
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "de-DE";
-    const voices = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith("de"));
-    if (voices[0]) u.voice = voices[0];
+    
+    if (voicesLoaded && germanVoices.length > 0) {
+      u.voice = germanVoices[0];
+    }
+    
     speechSynthesis.cancel();
     speechSynthesis.speak(u);
   }
@@ -56,6 +140,24 @@ window.BERLINGO.helpers = (function () {
       div.appendChild(b);
     });
     targetEl.appendChild(div);
+  }
+
+  function resetProgress() {
+    // Удаляем все ключи, связанные с прогрессом Berlingo
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('berlingo_')) {
+        keysToRemove.push(key);
+      }
+    }
+    
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+    
+    // Перезагружаем страницу для применения изменений
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   }
 
   // Drag & Drop handlers for '.piece' containers (desktop + touch)
@@ -186,7 +288,20 @@ window.BERLINGO.helpers = (function () {
     };
   }
 
-  return {
-    qs, qsa, markDone, unmarkDone, isDone, speak, addSpecialChars, addDnDHandlers, addMatchHandlers, showWordPopup
-  };
+  // helpers.js - в конце файла
+return {
+  qs, 
+  qsa, 
+  markDone, 
+  unmarkDone, 
+  isDone, 
+  resetProgress, 
+  speak, 
+  loadVoices,
+  warmUpSpeech,
+  addSpecialChars, 
+  addDnDHandlers, 
+  addMatchHandlers, 
+  showWordPopup
+};
 })();

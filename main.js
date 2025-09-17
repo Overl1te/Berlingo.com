@@ -19,7 +19,24 @@
     const urlParams = new URLSearchParams(window.location.search);
     const chapter = urlParams.get("chapter") || "learning";
 
-    
+    try {
+      await BERLINGO.helpers.warmUpSpeech();   // пробуем "прогреть" движок
+    } catch(e) { /* игнор */ }
+
+    await BERLINGO.helpers.loadVoices();
+
+    // если после всех попыток голосов нет — добавим одноразовый слушатель на пользовательский жест
+    if (!BERLINGO.helpers.germanVoices || BERLINGO.helpers.germanVoices.length === 0) {
+      const gestureHandler = async () => {
+        await BERLINGO.helpers.warmUpSpeech();
+        await BERLINGO.helpers.loadVoices();
+        window.removeEventListener('click', gestureHandler);
+        window.removeEventListener('touchstart', gestureHandler);
+      };
+      window.addEventListener('click', gestureHandler, { once: true });
+      window.addEventListener('touchstart', gestureHandler, { once: true });
+    }
+
     const isMain = !!h.qs("#lessons");
     const isSession = !!h.qs("#lesson-root");
     if (isMain) renderContent(chapter);
@@ -149,7 +166,7 @@
     const idx = LESSONS.findIndex(l => l.id === id);
     const prevDone = idx === 0 ? true : h.isDone(LESSONS[idx-1].id);
     if (!prevDone) {
-      root.innerHTML = `<div class="lesson-hero"><h3>Урок заблокирован</h3><p class="small">Пройди предыдущий!</p><div class="controls"><a class="btn" href="index.html?chapter=learning"><i class="fas fa-arrow-left"></i> К модулям</a></div></div>`;
+      root.innerHTML = `<div class="lesson-hero"><h3>Урок заблокирован</h3><p class="small">Пройди предыдущий!</p><div class="controls"><a class="btn" href="/?chapter=learning"><i class="fas fa-arrow-left"></i> К модулям</a></div></div>`;
       return;
     }
 
@@ -239,7 +256,7 @@
 
     function completeLesson(id, container) {
       h.markDone(id, HEARTS, POINTS);
-      container.innerHTML = `<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ${POINTS}, Осталось жизней: ${HEARTS}</p><div class="controls"><a class="btn" href="index.html?chapter=learning"><i class="fas fa-arrow-left"></i> К модулям</a></div></div>`;
+      container.innerHTML = `<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ${POINTS}, Осталось жизней: ${HEARTS}</p><div class="controls"><a class="btn" href="/?chapter=learning"><i class="fas fa-arrow-left"></i> К модулям</a></div></div>`;
     }
 
     function enableStep(i) {
@@ -295,7 +312,7 @@
         exerciseIndex = 0;
         showNextExercise();
         function showNextExercise(){
-          if (exerciseIndex >= (rule.exercises||[]).length) { h.markDone(rule.id, HEARTS, POINTS); content.innerHTML = `<div class="lesson-hero"><h3>Правило пройдено!</h3><p class="small">Очки: ${POINTS}</p><div class="controls"><a class="btn" href="index.html?chapter=rules"><i class="fas fa-arrow-left"></i> К правилам</a></div></div>`; return; }
+          if (exerciseIndex >= (rule.exercises||[]).length) { h.markDone(rule.id, HEARTS, POINTS); content.innerHTML = `<div class="lesson-hero"><h3>Правило пройдено!</h3><p class="small">Очки: ${POINTS}</p><div class="controls"><a class="btn" href="/?chapter=rules"><i class="fas fa-arrow-left"></i> К правилам</a></div></div>`; return; }
           const curr = rule.exercises[exerciseIndex];
           exModule.renderExercise(content, curr, {
             addPoints: (pts)=>{ POINTS+=pts; h.qs("#points").textContent = POINTS; },
@@ -361,6 +378,13 @@
     h.qs("#restart-practice").addEventListener("click", ()=> location.reload());
   }
 
+  const resetButton = document.querySelector('.remove_progress');
+  if (resetButton) {
+    resetButton.addEventListener('click', function() {
+      BERLINGO.helpers.resetProgress();
+    });
+  }
+
   // Init
   window.addEventListener("load", () => {
     h.qsa('.nav-item').forEach(item => {
@@ -380,6 +404,10 @@
         }
       });
     });
+
+    if (window.location.search === "") {
+      history.replaceState(null, '', `?chapter=learning`);
+    }
 
     loadData();
   });

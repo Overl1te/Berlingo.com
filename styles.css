@@ -138,3 +138,68 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
   .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
   .match-pairs { flex-direction: column; gap: 8px; }
 }
+
+/* Добавьте эти стили в конец файла styles.css */
+
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer > div:nth-child(2) {
+  text-align: center;
+  flex: 1;
+}
+
+.remove_progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  color: var(--error);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.1);
+}
+
+.remove_progress:hover {
+  background: rgba(244, 67, 54, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 67, 54, 0.2);
+}
+
+.remove_progress:active {
+  transform: translateY(0);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  footer > div:first-child,
+  footer > div:nth-child(2) {
+    flex: none;
+    width: 100%;
+  }
+  
+  .remove_progress {
+    order: -1; /* Перемещаем кнопку наверх на мобильных */
+    margin-bottom: 10px;
+  }
+}
