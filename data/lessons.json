@@ -108,7 +108,7 @@
         {
           "type": "fill_blank",
           "question": "Дополни: ___ heiße Anna.",
-          "sentence": "___ heiße Anna.",
+          "sentence": "Меня зовут Анна",
           "answers": [
             "Ich"
           ]

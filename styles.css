@@ -136,7 +136,7 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
   .container { padding: 12px; }
   .lessons-grid { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
-  .match-pairs { flex-direction: column; gap: 8px; }
+  .match-pairs { gap: 8px; }
 }
 
 /* Добавьте эти стили в конец файла styles.css */

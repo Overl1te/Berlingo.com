@@ -130,6 +130,9 @@ window.BERLINGO.exercise = (function (h, ui) {
       });
       checkControls.appendChild(checkBtn);
     } else if (ex.type === "match") {
+      const pairsContainer = document.createElement("div");
+      pairsContainer.className = "match-pairs";
+
       const left = document.createElement("div");
       left.className = "match-column";
       const right = document.createElement("div");
@@ -147,8 +150,9 @@ window.BERLINGO.exercise = (function (h, ui) {
         r.textContent = p.ru;
         right.appendChild(r);
       });
-      exContent.appendChild(left);
-      exContent.appendChild(right);
+      pairsContainer.appendChild(left);
+      pairsContainer.appendChild(right);
+      exContent.appendChild(pairsContainer);
       h.addMatchHandlers(exContent, ex.pairs || []);
       const checkBtn = document.createElement("button");
       checkBtn.className = "btn";
