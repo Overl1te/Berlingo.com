@@ -13,7 +13,7 @@
 
   async function loadData() {
     const [lRes, rRes, pRes] = await Promise.all([fetch(LESSONS_URL), fetch(RULES_URL), fetch(PRACTICE_URL)]);
-    LESSONS = (await lRes.json()).lessons || [];
+    LESSONS = (await lRes.json()).sections || [];  // Изменено: теперь sections вместо lessons
     RULES = await rRes.json();
     PRACTICES = (await pRes.json()).practices || [];
     const urlParams = new URLSearchParams(window.location.search);
@@ -59,16 +59,56 @@
 
   function renderLearning() {
     const container = h.qs("#lessons");
-    LESSONS.forEach((ls, idx) => {
-      const prev = idx > 0 ? LESSONS[idx-1] : null;
-      const prevDone = prev ? h.isDone(prev.id) : true;
-      const currentDone = h.isDone(ls.id);
-      const card = document.createElement("div");
-      card.className = "lesson-card" + (!prevDone ? " locked" : "");
-      const actionHtml = !prevDone ? '<div class="lock-badge"><i class="fas fa-lock"></i> После предыдущего</div>'
-        : `<a class="btn" style="position:absolute; right:10px; bottom:10px" href="lessons.html?lesson=${idx+1}&chapter=learning">${currentDone?'<i class="fas fa-redo"></i> Повторить':'<i class="fas fa-play"></i> Начать'}</a>`;
-      card.innerHTML = `<div><h3>${ls.title}</h3><div class="lesson-meta">${ls.level} • ${ls.intro}</div></div><div>${currentDone?'<span class="small"><i class="fas fa-check-circle" style="color:var(--success)"></i> Пройден</span>':'<span class="small"><i class="fas fa-unlock"></i> Доступно</span>'}${actionHtml}</div>`;
-      container.appendChild(card);
+    const subNav = document.createElement('div');
+    subNav.className = 'nav-container';
+    subNav.style.marginBottom = '16px';
+    LESSONS.forEach((section, index) => {
+      const item = document.createElement('div');
+      item.className = 'nav-item';
+      item.textContent = section.level;
+      item.addEventListener('click', () => {
+        h.qsa('.nav-item', subNav).forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        renderModules(section.modules, content);
+      });
+      subNav.appendChild(item);
+    });
+    container.appendChild(subNav);
+
+    const content = document.createElement('div');
+    content.id = 'learning-content';
+    container.appendChild(content);
+
+    if (LESSONS.length > 0) {
+      h.qsa('.nav-item', subNav)[0].classList.add('active');
+      renderModules(LESSONS[0].modules, content);
+    }
+  }
+
+  function renderModules(modules, contentEl) {
+    contentEl.innerHTML = '';
+    modules.forEach(module => {
+      const moduleCard = document.createElement('div');
+      moduleCard.className = 'module-card';
+      moduleCard.innerHTML = `<h3>${module.title}</h3><div class="lesson-meta">${module.intro || 'Модуль с уроками'}</div>`;
+      
+      const lessonsList = document.createElement('div');
+      lessonsList.className = 'lessons-in-module';
+      module.lessons.forEach((ls, idx) => {
+        const prev = idx > 0 ? module.lessons[idx - 1] : null;
+        const prevDone = prev ? h.isDone(prev.id) : true;
+        const currentDone = h.isDone(ls.id);
+        const card = document.createElement('div');
+        card.className = 'lesson-card' + (!prevDone ? ' locked' : '');
+        const actionHtml = !prevDone ? '<div class="lock-badge"><i class="fas fa-lock"></i> После предыдущего</div>'
+          : `<a class="btn" style="position:absolute; right:10px; bottom:10px" href="lessons.html?lesson=${ls.id}&chapter=learning">${currentDone ? '<i class="fas fa-redo"></i> Повторить' : '<i class="fas fa-play"></i> Начать'}</a>`;
+        const statusHtml = currentDone ? '<span class="small"><i class="fas fa-check-circle" style="color:var(--success)"></i> Пройден</span>' 
+          : (prevDone ? '<span class="small"><i class="fas fa-unlock"></i> Доступно</span>' : '');
+        card.innerHTML = `<div><h4>${ls.title}</h4><div class="lesson-meta">${ls.intro || ''}</div></div><div>${statusHtml}${actionHtml}</div>`;
+        lessonsList.appendChild(card);
+      });
+      moduleCard.appendChild(lessonsList);
+      contentEl.appendChild(moduleCard);
     });
   }
 
@@ -151,11 +191,107 @@
     const lessonParam = params.get("lesson");
     const practiceParam = params.get("practice");
     const section = params.get("section");
+    const lessonId = params.get("lesson");
 
-    if (chapter === "learning" && lessonParam) renderLearningSession(lessonParam);
+    if (chapter === "learning" && lessonParam) renderLessonSession(lessonId);
     else if (chapter === "rules" && lessonParam && section) renderRulesSession(section, lessonParam);
     else if (chapter === "practice" && practiceParam) renderPracticeSession(practiceParam);
     else root.innerHTML = "<p>Сессия не указана. Вернитесь на главную.</p>";
+  }
+
+  function renderLessonSession(lessonId) {
+    const root = h.qs("#lesson-root");
+    // Поиск урока по id в nested структуре
+    const allLessons = LESSONS.flatMap(s => s.modules.flatMap(m => m.lessons));
+    const lesson = allLessons.find(ls => ls.id === lessonId);
+    if (!lesson) { root.innerHTML = "<p>Урок не найден.</p>"; return; }
+    root.innerHTML = "";
+    const title = lesson.title;
+    const subtitle = lesson.intro || "";
+    ui.renderHeader(root, title, subtitle);
+    const hearts = localStorage.getItem("berlingo_hearts_" + lesson.id) || 10;
+    const points = localStorage.getItem("berlingo_points_" + lesson.id) || 0;
+    POINTS = parseInt(points); HEARTS = parseInt(hearts);
+    ui.renderStats(root, HEARTS);
+    ui.renderProgress(root);
+    const content = document.createElement("div"); content.className = "lesson-hero"; root.appendChild(content);
+    const stepNav = ui.renderStepNav(content, [{title:"Теория"}, {title:"Слова"}, {title:"Упражнения"}], ["book", "language", "dumbbell"]);
+    const stepContent = document.createElement("div"); stepContent.className = "step-content"; content.appendChild(stepContent);
+    const btns = Array.from(stepNav.querySelectorAll(".btn"));
+    btns.forEach((b, i) => {
+      b.addEventListener("click", () => { if (!b.disabled) showStep(i); });
+      if (i > 0) {
+        b.disabled = true;
+        b.classList.add("ghost");
+      }
+    });
+
+    function showStep(i) {
+      const btns = Array.from(stepNav.querySelectorAll(".btn"));
+      btns.forEach((b, idx) => {
+        b.classList.toggle("ghost", idx !== i);
+        b.disabled = idx > i;  // Disable future steps, but allow clicking on previous or current
+      });
+      stepContent.innerHTML = "";
+      if (i === 0) {
+        const theory = document.createElement("div");
+        theory.className = "theory";
+        (lesson.theory || []).forEach(t => {
+          const sec = document.createElement("div");
+          sec.innerHTML = `<strong>${t.title}</strong><p>${t.content}</p>`;
+          theory.appendChild(sec);
+        });
+        stepContent.appendChild(theory);
+        const cont = document.createElement("div");
+        cont.style.marginTop = "16px"; cont.style.textAlign = "center";
+        const btn = document.createElement("button");
+        btn.className = "btn"; btn.innerHTML = '<i class="fas fa-arrow-right"></i> К словам';
+        btn.addEventListener("click", () => { enableStep(1); showStep(1); });
+        cont.appendChild(btn); stepContent.appendChild(cont);
+      }
+      if (i === 1) {
+        const vocab = document.createElement("div");
+        vocab.className = "vocab-grid";
+        (lesson.vocab || []).forEach(v => {
+          const card = document.createElement("div");
+          card.className = "vocab-card";
+          card.innerHTML = `<strong>${v.de}</strong><div class="small">${v.ru}</div>`;
+          card.addEventListener("click", () => h.speak(v.de));
+          vocab.appendChild(card);
+        });
+        stepContent.appendChild(vocab);
+        const cont = document.createElement("div");
+        cont.style.marginTop = "16px"; cont.style.textAlign = "center";
+        const btn = document.createElement("button");
+        btn.className = "btn"; btn.innerHTML = '<i class="fas fa-arrow-right"></i> К упражнениям';
+        btn.addEventListener("click", ()=> { enableStep(2); showStep(2); }); cont.appendChild(btn); stepContent.appendChild(cont);
+      }
+      if (i === 2) {
+        let exerciseIndex = 0;
+        showNextExercise();
+        function showNextExercise(){
+          if (exerciseIndex >= (lesson.exercises||[]).length) { h.markDone(lesson.id, HEARTS, POINTS); content.innerHTML = `<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ${POINTS}</p><div class="controls"><a class="btn" href="/?chapter=learning"><i class="fas fa-arrow-left"></i> К урокам</a></div></div>`; return; }
+          const curr = lesson.exercises[exerciseIndex];
+          exModule.renderExercise(stepContent, curr, {
+            addPoints: (pts)=>{ POINTS+=pts; h.qs("#points").textContent = POINTS; },
+            loseHeart: ()=>{ HEARTS--; h.qs("#hearts").textContent = HEARTS; if (HEARTS <= 0) { content.innerHTML = `<div class="lesson-hero"><h3>Сердечки закончились!</h3><div class="controls"><button class="btn" id="restart-lesson"><i class="fas fa-redo"></i> Повторить</button></div></div>`; h.qs("#restart-lesson").addEventListener("click", ()=>{ h.unmarkDone(lesson.id); location.reload(); }); } },
+            onContinue: ()=>{ exerciseIndex++; showNextExercise(); }
+          });
+          ui.updateProgress(((exerciseIndex+1)/(lesson.exercises||[]).length)*100);
+        }
+      }
+    }
+
+    function enableStep(i) {
+      const btns = Array.from(stepNav.querySelectorAll(".btn"));
+      if (btns[i]) {
+        btns[i].disabled = false;
+        btns[i].classList.remove("ghost");
+      }
+    }
+
+    showStep(0);
+    h.qs("#restart-lesson").addEventListener("click", ()=>{ h.unmarkDone(lesson.id); location.reload(); });
   }
 
   function renderLearningSession(lessonParam) {
