@@ -271,7 +271,7 @@ window.BERLINGO.helpers = (function () {
     const leftEls = Array.from(scopeEl.querySelectorAll(".match-left"));
     const rightEls = Array.from(scopeEl.querySelectorAll(".match-right"));
     leftEls.forEach(l => l.addEventListener("click", () => {
-      speak(l.textContent);  // Произносить немецкое слово при клике (в форме как написано)
+      playLocalAudio(l.textContent) || speak(l.textContent);  // Произносить немецкое слово при клике (в форме как написано)
       if (l.classList.contains("matched")) return;
       if (left) left.classList.remove("selected");
       left = l;
@@ -308,11 +308,27 @@ window.BERLINGO.helpers = (function () {
     qs("#popup-translate").textContent = ru;
     popup.classList.remove("hidden");
     popup.setAttribute("aria-hidden", "false");
-    qs("#popup-play").onclick = () => speak(de);
+    qs("#popup-play").onclick = () => playLocalAudio(de) || speak(de);
     qs("#popup-close").onclick = () => {
       popup.classList.add("hidden");
       popup.setAttribute("aria-hidden", "true");
     };
+  }
+
+  // Local audio playback
+  async function playLocalAudio(phrase) {
+    const filename = phrase.replace(/ /g, '_') + '.ogg';
+    const url = `data/pronunciation/${filename}`;
+    try {
+      const audio = new Audio(url);
+      await audio.play();
+    } catch (e) {
+      console.error('Failed to play local audio:', e);
+      // Fallback to speech synthesis if available
+      if (typeof speak === 'function') {
+        speak(phrase);
+      }
+    }
   }
 
   // helpers.js - в конце файла
@@ -333,6 +349,7 @@ return {
   isDevMode,
   setDevMode,
   isSkipEnabled,
-  setSkipEnabled
+  setSkipEnabled,
+  playLocalAudio
 };
 })();

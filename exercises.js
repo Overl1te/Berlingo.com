@@ -47,7 +47,7 @@ window.BERLINGO.exercise = (function (h, ui) {
         btn.addEventListener("click", () => {
           const isCorrect = i === ex.answer;
           if (isCorrect) {
-            h.speak(opt);  // Произносить только правильный вариант при выборе
+            h.playLocalAudio(opt) || h.speak(opt);  // Произносить только правильный вариант при выборе
           }
           resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
           Array.from(exContent.querySelectorAll(".mcq-option")).forEach(b => b.disabled = true);
@@ -61,7 +61,7 @@ window.BERLINGO.exercise = (function (h, ui) {
         playBtn.className = "btn";
         playBtn.type = "button";
         playBtn.innerHTML = '<i class="fas fa-play"></i> Прослушать';
-        playBtn.addEventListener("click", () => h.speak(ex.phrase || ex.answer || ""));
+        playBtn.addEventListener("click", () => h.playLocalAudio(ex.phrase || ex.answer || "") || h.speak(ex.phrase || ex.answer || ""));
         exContent.appendChild(playBtn);
       }
       if (ex.type === "fill_blank") {
@@ -85,7 +85,7 @@ window.BERLINGO.exercise = (function (h, ui) {
         const correctAnswer = (ex.answer || "").toLowerCase();
         const isCorrect = userAnswer === correctAnswer;
         if (isCorrect) {
-          h.speak(ex.answer || "");
+          h.playLocalAudio(ex.answer) || h.speak(ex.answer || "");
         }
         resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
         if (!isCorrect) {
@@ -180,13 +180,13 @@ window.BERLINGO.exercise = (function (h, ui) {
       // Add listener for whole phrase button
       const playWholeBtn = exEl.querySelector(".play-whole");
       if (playWholeBtn) {
-        playWholeBtn.addEventListener("click", () => h.speak(ex.pronounce || ""));
+        playWholeBtn.addEventListener("click", () => h.playLocalAudio(ex.pronounce) || h.speak(ex.pronounce || ""));
       }
 
       // Add listeners for individual words
       const wordSpans = exEl.querySelectorAll(".pronounce-word");
       wordSpans.forEach(span => {
-        span.addEventListener("click", () => h.speak(span.textContent || ""));
+        span.addEventListener("click", () => h.playLocalAudio(span.textContent) || h.speak(span.textContent || ""));
       });
 
       // The rest of the pronounce exercise (microphone recording) remains the same

@@ -243,7 +243,8 @@
           const card = document.createElement("div");
           card.className = "vocab-card";
           card.innerHTML = `<strong>${v.de}</strong> - ${v.ru}`;
-          card.addEventListener("click", () => h.speak(v.de));
+          console.log(v.de);
+          card.addEventListener("click", () => h.playLocalAudio(v.de) || h.speak(v.de));
           vocab.appendChild(card);
         });
         content.appendChild(vocab);
