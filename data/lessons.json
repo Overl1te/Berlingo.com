@@ -59,6 +59,11 @@
       ],
       "exercises": [
         {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Freut mich"
+        },
+        {
           "type": "mcq",
           "question": "Как сказать 'привет' неформально?",
           "options": [
@@ -88,6 +93,11 @@
             "heißt",
             "du?"
           ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Hallo"
         },
         {
           "type": "match",
@@ -866,11 +876,11 @@
           "type": "mcq",
           "question": "Вопрос: ___ bist du?",
           "options": [
-            "Wo",
+            "Wie",
             "Was",
             "Wer"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "type": "input",

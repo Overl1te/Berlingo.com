@@ -1,7 +1,7 @@
 /*
   exercises.js
   - Single entry point: renderExercise(ex, opts)
-  - Handles mcq, input, reorder, match, fill_blank, listen_type
+  - Handles mcq, input, reorder, match, fill_blank, listen_type, pronounce
   Expose under BERLINGO.exercise
 */
 window.BERLINGO = window.BERLINGO || {};
@@ -194,6 +194,80 @@ window.BERLINGO.exercise = (function (h, ui) {
         finish(allMatched);
       });
       checkControls.appendChild(checkBtn);
+    } else if (ex.type === "pronounce") {
+      // Split the pronounce field into words
+      const words = (ex.pronounce || "").trim().split(/\s+/);
+      h.speak(ex.pronounce || "")
+      // Build the title with play button for whole phrase and clickable words
+      const titleDiv = exEl.querySelector("div strong"); // Assuming the strong is already in the innerHTML
+      titleDiv.innerHTML = `${ex.question || ""} <div class="pronounce-container" style="display: inline-flex; align-items: center; gap: 4px;">
+        <button class="btn small play-whole" style="padding: 4px 8px;"><i class="fas fa-volume-up"></i></button>
+        <span class="pronounce-words">${words.map(word => `<span class="pronounce-word" style="cursor: pointer; text-decoration: underline;">${word}</span>`).join(' ')}</span>
+      </div>`;
+
+      // Add listener for whole phrase button
+      const playWholeBtn = exEl.querySelector(".play-whole");
+      if (playWholeBtn) {
+        playWholeBtn.addEventListener("click", () => h.speak(ex.pronounce || ""));
+      }
+
+      // Add listeners for individual words
+      const wordSpans = exEl.querySelectorAll(".pronounce-word");
+      wordSpans.forEach(span => {
+        span.addEventListener("click", () => h.speak(span.textContent || ""));
+      });
+
+      // The rest of the pronounce exercise (microphone recording) remains the same
+      const recordBtn = document.createElement("button");
+      recordBtn.className = "recordBtn";
+      recordBtn.type = "button";
+      recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Нажмите и говорите';
+      recordBtn.addEventListener("click", () => {
+        if (!('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+          resultEl.innerHTML = '<i class="fas fa-times" style="color:var(--error)"></i> Распознавание речи не поддерживается в этом браузере.';
+          return;
+        }
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'de-DE';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onstart = () => {
+          recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Запись...';
+          recordBtn.disabled = true;
+        };
+
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript.trim();
+          // console.log(`Распознано: ${transcript}`);
+
+          const isCorrect = transcript.toLowerCase() === (ex.pronounce || "").toLowerCase();
+          resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
+          if (!isCorrect) {
+            correctAnswerEl.textContent = `Правильное произношение: ${ex.pronounce}`;
+            correctAnswerEl.style.display = "block";
+          }
+          recordBtn.disabled = true;
+          finish(isCorrect);
+        };
+
+        recognition.onerror = (event) => {
+          // console.log(`Ошибка распознавания: ${event.error}`);
+          resultEl.innerHTML = '<i class="fas fa-times" style="color:var(--error)"></i> Ошибка распознавания. Попробуйте снова.';
+          recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Начать запись';
+          recordBtn.disabled = false;
+        };
+
+        recognition.onend = () => {
+          recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Начать запись';
+          if (!recordBtn.disabled) recordBtn.disabled = false;
+        };
+
+        recognition.start();
+      });
+      exContent.appendChild(recordBtn);
     } else {
       exContent.innerHTML = "<div>Неподдерживаемый тип упражнения.</div>";
     }
