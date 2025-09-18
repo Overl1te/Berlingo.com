@@ -1,0 +1,306 @@
+{
+  "lessons": [
+    {
+      "id": "lesson6_1",
+      "title": "Урок 1: Wenn для условий",
+      "intro": "Если",
+      "theory": [
+        {
+          "title": "Wenn (если)",
+          "content": "Для условий. Глагол в конце. Пример: Wenn es regnet, bleibe ich zu Hause."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "wenn",
+          "ru": "если"
+        },
+        {
+          "de": "es regnet",
+          "ru": "идет дождь"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "___ es schneit, gehe ich Ski fahren.",
+          "options": [
+            "Wenn",
+            "Als",
+            "Weil"
+          ],
+          "answer": 0
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "___ du Zeit hast, ruf mich an.",
+          "answers": [
+            "Wenn"
+          ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "wenn es regnet"
+        }
+      ]
+    },
+    {
+      "id": "lesson6_2",
+      "title": "Урок 2: Wenn для будущего",
+      "intro": "Когда (будущее)",
+      "theory": [
+        {
+          "title": "Wenn (когда)",
+          "content": "Для будущего времени. Wenn du kommst, essen wir."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "du kommst",
+          "ru": "ты приходишь"
+        },
+        {
+          "de": "essen wir",
+          "ru": "мы едим"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "input",
+          "question": "Переведи 'if you have time':",
+          "answer": "wenn du Zeit hast"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Если идет дождь'",
+          "pieces": [
+            "Wenn",
+            "es",
+            "regnet"
+          ],
+          "correct": [
+            "Wenn",
+            "es",
+            "regnet"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "wenn du kommst"
+        }
+      ]
+    },
+    {
+      "id": "lesson6_3",
+      "title": "Урок 3: Als для прошлого",
+      "intro": "Когда (прошлое)",
+      "theory": [
+        {
+          "title": "Als",
+          "content": "Для прошлого. Als ich Kind war..."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "als",
+          "ru": "когда (past)"
+        },
+        {
+          "de": "ich Kind war",
+          "ru": "я был ребенком"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "als",
+              "ru": "когда (past)"
+            },
+            {
+              "de": "wenn",
+              "ru": "если"
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "___ ich klein war, spielte ich viel.",
+          "options": [
+            "Wenn",
+            "Als",
+            "Weil"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "___ wir Kinder waren.",
+          "answers": [
+            "Als"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson6_4",
+      "title": "Урок 4: Порядок слов",
+      "intro": "В сложных предложениях",
+      "theory": [
+        {
+          "title": "Порядок",
+          "content": "Придаточное может быть первым: Wenn du kommst, essen wir. Глагол в конце придаточного."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "bleibe ich",
+          "ru": "я остаюсь"
+        },
+        {
+          "de": "zu Hause",
+          "ru": "дома"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Когда он пришел'",
+          "pieces": [
+            "Als",
+            "er",
+            "kam"
+          ],
+          "correct": [
+            "Als",
+            "er",
+            "kam"
+          ]
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'when I was a child':",
+          "answer": "als ich Kind war"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "wenn du Zeit hast"
+        }
+      ]
+    },
+    {
+      "id": "lesson6_5",
+      "title": "Урок 5: Практика",
+      "intro": "Сочетание wenn и als",
+      "theory": [
+        {
+          "title": "Практика",
+          "content": "Wenn для повторяющихся, als для однократного в прошлом."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "ich esse",
+          "ru": "я ем"
+        },
+        {
+          "de": "ich Hunger habe",
+          "ru": "у меня голод"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "Ich esse, ___ ich Hunger habe.",
+          "answers": [
+            "wenn"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "als ich klein war"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "wenn",
+              "ru": "когда (future)"
+            },
+            {
+              "de": "als",
+              "ru": "когда (past)"
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Глагол в конце: Wenn ich ___ ...",
+          "options": [
+            "gehe",
+            "gehst",
+            "gehe"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "lesson6_6",
+      "title": "Урок 6: Тест",
+      "intro": "Проверь сложные предложения",
+      "theory": [
+        {
+          "title": "Повторение",
+          "content": "Повторите wenn и als."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "wenn",
+          "ru": "если/когда"
+        },
+        {
+          "de": "als",
+          "ru": "когда (past)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "___ er kam, war ich weg.",
+          "options": [
+            "Wenn",
+            "Als",
+            "Weil"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'if it snows':",
+          "answer": "wenn es schneit"
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "___ du kommst, essen wir.",
+          "answers": [
+            "Wenn"
+          ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "als ich Kind war"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "lessons": [
+    {
+      "id": "lesson4_1",
+      "title": "Урок 1: Настоящее время",
+      "intro": "Основное спряжение",
+      "theory": [
+        {
+          "title": "Настоящее время",
+          "content": "ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en. Пример: spielen - ich spiele."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "spielen",
+          "ru": "играть"
+        },
+        {
+          "de": "ich spiele",
+          "ru": "я играю"
+        },
+        {
+          "de": "du spielst",
+          "ru": "ты играешь"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "Ich ___ Fußball. (spielen)",
+          "answers": [
+            "spiele"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Ты: du ___",
+          "options": [
+            "spiele",
+            "spielst",
+            "spielt"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "ich spiele"
+        }
+      ]
+    },
+    {
+      "id": "lesson4_2",
+      "title": "Урок 2: Третье лицо",
+      "intro": "er/sie/es",
+      "theory": [
+        {
+          "title": "Третье лицо",
+          "content": "Er spielt, sie spielt, es spielt."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "er spielt",
+          "ru": "он играет"
+        },
+        {
+          "de": "sie spielt",
+          "ru": "она играет"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "input",
+          "question": "Переведи 'he plays':",
+          "answer": "er spielt"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Она играет'",
+          "pieces": [
+            "Sie",
+            "spielt"
+          ],
+          "correct": [
+            "Sie",
+            "spielt"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "es spielt"
+        }
+      ]
+    },
+    {
+      "id": "lesson4_3",
+      "title": "Урок 3: Множественное число",
+      "intro": "wir, ihr, sie",
+      "theory": [
+        {
+          "title": "Множественное",
+          "content": "Wir spielen, ihr spielt, sie spielen."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "wir spielen",
+          "ru": "мы играем"
+        },
+        {
+          "de": "ihr spielt",
+          "ru": "вы играете"
+        },
+        {
+          "de": "sie spielen",
+          "ru": "они играют"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "wir",
+              "ru": "мы"
+            },
+            {
+              "de": "ihr",
+              "ru": "вы"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "Wir ___ Tennis.",
+          "answers": [
+            "spielen"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Они: sie ___",
+          "options": [
+            "spielt",
+            "spielen",
+            "spielst"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lesson4_4",
+      "title": "Урок 4: Нерегулярные глаголы",
+      "intro": "Простые примеры",
+      "theory": [
+        {
+          "title": "Нерегулярные",
+          "content": "Sein: ich bin, du bist, er ist."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "sein",
+          "ru": "быть"
+        },
+        {
+          "de": "ich bin",
+          "ru": "я есть"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "input",
+          "question": "Переведи 'I am':",
+          "answer": "ich bin"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "du bist"
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "Er ___ groß.",
+          "answers": [
+            "ist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson4_5",
+      "title": "Урок 5: Практика",
+      "intro": "Сочетание в предложениях",
+      "theory": [
+        {
+          "title": "Практика",
+          "content": "Ich spiele Fußball. Wir essen zusammen."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "essen",
+          "ru": "есть"
+        },
+        {
+          "de": "zusammen",
+          "ru": "вместе"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Мы едим'",
+          "pieces": [
+            "Wir",
+            "essen"
+          ],
+          "correct": [
+            "Wir",
+            "essen"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "ihr spielt"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "essen",
+              "ru": "есть"
+            },
+            {
+              "de": "spielen",
+              "ru": "играть"
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Ты ешь: du ___",
+          "options": [
+            "isst",
+            "essen",
+            "esse"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "lesson4_6",
+      "title": "Урок 6: Тест",
+      "intro": "Проверь спряжение",
+      "theory": [
+        {
+          "title": "Повторение",
+          "content": "Повторите все формы."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "spielen",
+          "ru": "играть"
+        },
+        {
+          "de": "sein",
+          "ru": "быть"
+        },
+        {
+          "de": "essen",
+          "ru": "есть"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "Du ___ . (sein)",
+          "answers": [
+            "bist"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Мы: wir ___",
+          "options": [
+            "spielt",
+            "spielen",
+            "spielst"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'she is':",
+          "answer": "sie ist"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "wir spielen"
+        }
+      ]
+    }
+  ]
+}

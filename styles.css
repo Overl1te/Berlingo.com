@@ -47,8 +47,6 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
 .theory { display: grid; gap: 8px; }
 .theory .item { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.03); opacity: 0; transform: translateY(6px); transition: opacity .4s ease, transform .4s ease; }
 .theory .item.visible { opacity: 1; transform: none; }
-.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
-.vocab-item { background: rgba(255,255,255,0.03); padding: 8px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: transform .2s ease; }
 .vocab-item:hover { transform: scale(1.03); }
 .vocab-item.flipped { background: var(--accent-2); color: #fff; }
 .example { padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: space-between; }
@@ -135,7 +133,6 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
 @media (max-width: 600px) {
   .container { padding: 12px; }
   .lessons-grid { grid-template-columns: 1fr; }
-  .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
   .match-pairs { gap: 8px; }
 }
 
@@ -167,15 +164,79 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
     margin: 0px 0px 25px 0px;
 }
 
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
 .vocab-card {
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.vocab-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(171, 71, 188, 0.2);
+  border-color: rgba(171, 71, 188, 0.3);
+  background: linear-gradient(180deg, rgba(171, 71, 188, 0.1), rgba(171, 71, 188, 0.05));
 }
 
 .vocab-card strong {
+  font-size: 16px;
   text-decoration: underline;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.vocab-card::after {
+  content: "🔊";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.vocab-card:hover::after {
+  opacity: 1;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 600px) {
+  .vocab-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+  
+  .vocab-card {
+    padding: 12px;
+    min-height: 70px;
+  }
+  
+  .vocab-card strong {
+    font-size: 14px;
+  }
+  
+  .vocab-card::after {
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
+  }
 }
 
 .recordBtn {

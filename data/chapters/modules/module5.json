@@ -1,0 +1,310 @@
+{
+  "lessons": [
+    {
+      "id": "lesson5_1",
+      "title": "Урок 1: Генитив",
+      "intro": "Родительный падеж",
+      "theory": [
+        {
+          "title": "Генитив",
+          "content": "des (masc/neut), der (fem), der (pl). Пример: das Haus des Mannes."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "des Mannes",
+          "ru": "мужчины (gen)"
+        },
+        {
+          "de": "der Frau",
+          "ru": "женщины (gen)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "Das Haus ___ Mannes.",
+          "answers": [
+            "des"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Для женщины: ___ Frau",
+          "options": [
+            "des",
+            "der",
+            "das"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "des Mannes"
+        }
+      ]
+    },
+    {
+      "id": "lesson5_2",
+      "title": "Урок 2: Предлог wegen",
+      "intro": "Из-за",
+      "theory": [
+        {
+          "title": "Wegen",
+          "content": "Wegen des Wetters (из-за погоды)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "wegen",
+          "ru": "из-за"
+        },
+        {
+          "de": "des Wetters",
+          "ru": "погоды"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "input",
+          "question": "Переведи 'because of the rain':",
+          "answer": "wegen des Regens"
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Из-за погоды'",
+          "pieces": [
+            "Wegen",
+            "des",
+            "Wetters"
+          ],
+          "correct": [
+            "Wegen",
+            "des",
+            "Wetters"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "wegen des Wetters"
+        }
+      ]
+    },
+    {
+      "id": "lesson5_3",
+      "title": "Урок 3: Другие предлоги",
+      "intro": "statt, während",
+      "theory": [
+        {
+          "title": "Statt, während",
+          "content": "Statt des Kaffees (вместо кофе), während der Stunde (во время урока)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "statt",
+          "ru": "вместо"
+        },
+        {
+          "de": "während",
+          "ru": "во время"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "statt",
+              "ru": "вместо"
+            },
+            {
+              "de": "während",
+              "ru": "во время"
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Во время: ___ der Stunde",
+          "options": [
+            "wegen",
+            "während",
+            "statt"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "___ des Kaffees trinke ich Tee.",
+          "answers": [
+            "Statt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson5_4",
+      "title": "Урок 4: Генитив в предложениях",
+      "intro": "Применение",
+      "theory": [
+        {
+          "title": "Предложения",
+          "content": "Der Name der Stadt (имя города)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Stadt",
+          "ru": "города (gen)"
+        },
+        {
+          "de": "des Kindes",
+          "ru": "ребенка (gen)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "input",
+          "question": "Переведи 'the child's book':",
+          "answer": "das Buch des Kindes"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "der Stadt"
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "Der Name ___ Stadt.",
+          "answers": [
+            "der"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson5_5",
+      "title": "Урок 5: Практика",
+      "intro": "Комбинированные примеры",
+      "theory": [
+        {
+          "title": "Практика",
+          "content": "Wegen des Regens, statt des Films."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "des Regens",
+          "ru": "дождя"
+        },
+        {
+          "de": "des Films",
+          "ru": "фильма"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Вместо кофе'",
+          "pieces": [
+            "Statt",
+            "des",
+            "Kaffees"
+          ],
+          "correct": [
+            "Statt",
+            "des",
+            "Kaffees"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "während der Stunde"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "wegen",
+              "ru": "из-за"
+            },
+            {
+              "de": "statt",
+              "ru": "вместо"
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Из-за: ___ des Wetters",
+          "options": [
+            "statt",
+            "während",
+            "wegen"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "lesson5_6",
+      "title": "Урок 6: Тест",
+      "intro": "Проверь генитив",
+      "theory": [
+        {
+          "title": "Повторение",
+          "content": "Повторите предлоги и генитив."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "wegen",
+          "ru": "из-за"
+        },
+        {
+          "de": "statt",
+          "ru": "вместо"
+        },
+        {
+          "de": "während",
+          "ru": "во время"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "___ des Regens.",
+          "answers": [
+            "Wegen"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Вместо: ___ des Films",
+          "options": [
+            "wegen",
+            "statt",
+            "während"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'during the lesson':",
+          "answer": "während der Stunde"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "des Kindes"
+        }
+      ]
+    }
+  ]
+}

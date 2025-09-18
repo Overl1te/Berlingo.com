@@ -1,0 +1,339 @@
+{
+  "lessons": [
+    {
+      "id": "lesson1_1",
+      "title": "Урок 1: Основные приветствия",
+      "intro": "Неформальные и формальные приветствия",
+      "theory": [
+        {
+          "title": "Приветствия",
+          "content": "В немецком языке приветствия зависят от степени формальности. Неформально используйте 'Hallo' с друзьями или ровесниками. Формально - 'Guten Tag' (добрый день) или 'Guten Morgen' (доброе утро) для незнакомых людей или в официальной обстановке."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Hallo",
+          "ru": "привет"
+        },
+        {
+          "de": "Guten Tag",
+          "ru": "добрый день"
+        },
+        {
+          "de": "Guten Morgen",
+          "ru": "доброе утро"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Как сказать 'привет' неформально?",
+          "options": [
+            "Guten Tag",
+            "Hallo",
+            "Tschüss"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'добрый день':",
+          "answer": "Guten Tag"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Hallo"
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши приветствие",
+          "answer": "Guten Morgen"
+        }
+      ]
+    },
+    {
+      "id": "lesson1_2",
+      "title": "Урок 2: Представления",
+      "intro": "Как представиться и спросить имя",
+      "theory": [
+        {
+          "title": "Представления",
+          "content": "Чтобы представиться, используйте 'Ich heiße...' (Меня зовут...). Для вопроса: 'Wie heißen Sie?' (формально) или 'Wie heißt du?' (неформально). Ответ: 'Freut mich' (Приятно познакомиться)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Wie heißt du?",
+          "ru": "Как тебя зовут?"
+        },
+        {
+          "de": "Ich heiße...",
+          "ru": "Меня зовут..."
+        },
+        {
+          "de": "Freut mich",
+          "ru": "Приятно познакомиться"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Как тебя зовут?'",
+          "pieces": [
+            "Wie",
+            "heißt",
+            "du?"
+          ],
+          "correct": [
+            "Wie",
+            "heißt",
+            "du?"
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: ___ heiße Anna.",
+          "sentence": "Меня зовут Анна",
+          "answers": [
+            "Ich"
+          ]
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'Приятно познакомиться':",
+          "answer": "Freut mich"
+        }
+      ]
+    },
+    {
+      "id": "lesson1_3",
+      "title": "Урок 3: Прощания",
+      "intro": "Как попрощаться",
+      "theory": [
+        {
+          "title": "Прощания",
+          "content": "Неформально: 'Tschüss' или 'Ciao'. Формально: 'Auf Wiedersehen'."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Tschüss",
+          "ru": "пока"
+        },
+        {
+          "de": "Auf Wiedersehen",
+          "ru": "до свидания"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Формальное прощание?",
+          "options": [
+            "Tschüss",
+            "Auf Wiedersehen",
+            "Hallo"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь прощания",
+          "pairs": [
+            {
+              "de": "Tschüss",
+              "ru": "пока"
+            },
+            {
+              "de": "Auf Wiedersehen",
+              "ru": "до свидания"
+            }
+          ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Tschüss"
+        }
+      ]
+    },
+    {
+      "id": "lesson1_4",
+      "title": "Урок 4: Построение простых предложений",
+      "intro": "Порядок слов в предложениях",
+      "theory": [
+        {
+          "title": "Подсказки по построению предложений",
+          "content": "Простые предложения: Подлежащее + глагол + объект. Пример: Ich heiße Max. (Я зовусь Макс.) Вопросы: Глагол на первое место. Пример: Heißt du Max? (Зовут ли тебя Макс?)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Ich",
+          "ru": "я"
+        },
+        {
+          "de": "Du",
+          "ru": "ты"
+        },
+        {
+          "de": "Heißen",
+          "ru": "звать"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Меня зовут Макс'",
+          "pieces": [
+            "Ich",
+            "heiße",
+            "Max"
+          ],
+          "correct": [
+            "Ich",
+            "heiße",
+            "Max"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Глагол на втором месте: Ich ___ Max.",
+          "options": [
+            "bin",
+            "heiße",
+            "ist"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Heißt ___ Anna?",
+          "sentence": "Зовут ли тебя Анна?",
+          "answers": [
+            "du"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson1_5",
+      "title": "Урок 5: Практика разговора",
+      "intro": "Сочетание приветствий и представлений",
+      "theory": [
+        {
+          "title": "Комбинирование",
+          "content": "Сочетайте: Hallo, wie heißt du? - Ich heiße Anna. Freut mich."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Hallo, wie heißt du?",
+          "ru": "Привет, как тебя зовут?"
+        },
+        {
+          "de": "Freut mich",
+          "ru": "Приятно"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши фразу",
+          "answer": "Hallo, ich heiße Anna"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Freut mich"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь фразы",
+          "pairs": [
+            {
+              "de": "Hallo",
+              "ru": "привет"
+            },
+            {
+              "de": "Freut mich",
+              "ru": "Приятно познакомиться"
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'Привет, меня зовут...':",
+          "answer": "Hallo, ich heiße..."
+        }
+      ]
+    },
+    {
+      "id": "lesson1_6",
+      "title": "Урок 6: Тест",
+      "intro": "Проверь знания модуля",
+      "theory": [
+        {
+          "title": "Повторение",
+          "content": "Повторите все фразы и правила порядка слов."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Hallo",
+          "ru": "привет"
+        },
+        {
+          "de": "Tschüss",
+          "ru": "пока"
+        },
+        {
+          "de": "Ich heiße",
+          "ru": "меня зовут"
+        },
+        {
+          "de": "Freut mich",
+          "ru": "приятно"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Неформальное прощание?",
+          "options": [
+            "Auf Wiedersehen",
+            "Tschüss",
+            "Guten Tag"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'До свидания'",
+          "pieces": [
+            "Auf",
+            "Wiedersehen"
+          ],
+          "correct": [
+            "Auf",
+            "Wiedersehen"
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Guten ___",
+          "sentence": "Добрый день",
+          "answers": [
+            "Tag"
+          ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Hallo"
+        }
+      ]
+    }
+  ]
+}

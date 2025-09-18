@@ -1,0 +1,336 @@
+{
+  "lessons": [
+    {
+      "id": "lesson2_1",
+      "title": "Урок 1: Члены семьи",
+      "intro": "Основные слова для семьи",
+      "theory": [
+        {
+          "title": "Семья",
+          "content": "Mutter (мама), Vater (папа), Bruder (брат), Schwester (сестра)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Mutter",
+          "ru": "мама"
+        },
+        {
+          "de": "Vater",
+          "ru": "папа"
+        },
+        {
+          "de": "Bruder",
+          "ru": "брат"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Мама на немецком?",
+          "options": [
+            "Vater",
+            "Mutter",
+            "Schwester"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'брат':",
+          "answer": "Bruder"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Mutter"
+        }
+      ]
+    },
+    {
+      "id": "lesson2_2",
+      "title": "Урок 2: Друзья и знакомые",
+      "intro": "Слова для друзей",
+      "theory": [
+        {
+          "title": "Друзья",
+          "content": "Freund (друг), Freundin (подруга)."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Freund",
+          "ru": "друг"
+        },
+        {
+          "de": "Freundin",
+          "ru": "подруга"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "Freund",
+              "ru": "друг"
+            },
+            {
+              "de": "Freundin",
+              "ru": "подруга"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Mein ___ ist nett.",
+          "sentence": "Мой друг милый",
+          "answers": [
+            "Freund"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "Freundin"
+        }
+      ]
+    },
+    {
+      "id": "lesson2_3",
+      "title": "Урок 3: Вопросы о семье",
+      "intro": "Как спрашивать о семье",
+      "theory": [
+        {
+          "title": "Вопросы",
+          "content": "Hast du Geschwister? (У тебя есть братья/сестры?)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Geschwister",
+          "ru": "братья/сестры"
+        },
+        {
+          "de": "Hast du...?",
+          "ru": "У тебя есть...?"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'У тебя есть брат?'",
+          "pieces": [
+            "Hast",
+            "du",
+            "einen",
+            "Bruder?"
+          ],
+          "correct": [
+            "Hast",
+            "du",
+            "einen",
+            "Bruder?"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Братья/сестры: ",
+          "options": [
+            "Freund",
+            "Geschwister",
+            "Vater"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'У тебя есть...':",
+          "answer": "Hast du..."
+        }
+      ]
+    },
+    {
+      "id": "lesson2_4",
+      "title": "Урок 4: Описания семьи",
+      "intro": "Простые описания",
+      "theory": [
+        {
+          "title": "Описания",
+          "content": "Meine Familie ist groß. (Моя семья большая.)"
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Meine Familie",
+          "ru": "моя семья"
+        },
+        {
+          "de": "Groß",
+          "ru": "большая"
+        },
+        {
+          "de": "Klein",
+          "ru": "маленькая"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Meine ___ ist klein.",
+          "sentence": "Моя семья маленькая",
+          "answers": [
+            "Familie"
+          ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Meine Familie"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "Groß",
+              "ru": "большая"
+            },
+            {
+              "de": "Klein",
+              "ru": "маленькая"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson2_5",
+      "title": "Урок 5: Практика",
+      "intro": "Комбинированные фразы",
+      "theory": [
+        {
+          "title": "Практика",
+          "content": "Сочетайте слова: Ich habe einen Bruder und eine Schwester."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Ich habe",
+          "ru": "у меня есть"
+        },
+        {
+          "de": "Und",
+          "ru": "и"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'У меня есть сестра'",
+          "pieces": [
+            "Ich",
+            "habe",
+            "eine",
+            "Schwester"
+          ],
+          "correct": [
+            "Ich",
+            "habe",
+            "eine",
+            "Schwester"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "Ich habe einen Freund"
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'и':",
+          "answer": "und"
+        },
+        {
+          "type": "mcq",
+          "question": "У меня есть: ",
+          "options": [
+            "Ich bin",
+            "Ich habe",
+            "Ich heiße"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lesson2_6",
+      "title": "Урок 6: Тест",
+      "intro": "Проверь знания",
+      "theory": [
+        {
+          "title": "Повторение",
+          "content": "Повторите все слова о семье и друзьях."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Mutter",
+          "ru": "мама"
+        },
+        {
+          "de": "Freund",
+          "ru": "друг"
+        },
+        {
+          "de": "Geschwister",
+          "ru": "братья/сестры"
+        },
+        {
+          "de": "Familie",
+          "ru": "семья"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Папа: ",
+          "options": [
+            "Mutter",
+            "Vater",
+            "Bruder"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "fill_blank",
+          "question": "Дополни: Hast du ___ ?",
+          "sentence": "У тебя есть братья/сестры?",
+          "answers": [
+            "Geschwister"
+          ]
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "Freundin"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "Klein",
+              "ru": "маленькая"
+            },
+            {
+              "de": "Groß",
+              "ru": "большая"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "lessons": [
+    {
+      "id": "lesson3_1",
+      "title": "Урок 1: Определенные артикли",
+      "intro": "der, die, das",
+      "theory": [
+        {
+          "title": "Определенные артикли",
+          "content": "der (мужской), die (женский), das (средний). Пример: der Mann, die Frau, das Kind."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Mann",
+          "ru": "мужчина"
+        },
+        {
+          "de": "die Frau",
+          "ru": "женщина"
+        },
+        {
+          "de": "das Kind",
+          "ru": "ребенок"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "___ Mann ist groß.",
+          "answers": [
+            "Der"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "Артикль для 'Frau'?",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "der Mann"
+        }
+      ]
+    },
+    {
+      "id": "lesson3_2",
+      "title": "Урок 2: Неопределенные артикли",
+      "intro": "ein, eine",
+      "theory": [
+        {
+          "title": "Неопределенные артикли",
+          "content": "ein (муж/ср), eine (жен). Пример: ein Apfel, eine Banane."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "ein Apfel",
+          "ru": "яблоко"
+        },
+        {
+          "de": "eine Banane",
+          "ru": "банан"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "input",
+          "question": "Переведи 'a woman':",
+          "answer": "eine Frau"
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "ein",
+              "ru": "a (masc/neut)"
+            },
+            {
+              "de": "eine",
+              "ru": "a (fem)"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "sentence": "___ Kind spielt.",
+          "answers": [
+            "Ein"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson3_3",
+      "title": "Урок 3: Род существительных",
+      "intro": "Определение рода",
+      "theory": [
+        {
+          "title": "Род",
+          "content": "Большинство слов мужского рода оканчиваются на -er, женского на -ung, среднего на -chen."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der Lehrer",
+          "ru": "учитель"
+        },
+        {
+          "de": "die Zeitung",
+          "ru": "газета"
+        },
+        {
+          "de": "das Mädchen",
+          "ru": "девочка"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "mcq",
+          "question": "Род 'Mädchen'?",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 2
+        },
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'the teacher'",
+          "pieces": [
+            "der",
+            "Lehrer"
+          ],
+          "correct": [
+            "der",
+            "Lehrer"
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "die Zeitung"
+        }
+      ]
+    },
+    {
+      "id": "lesson3_4",
+      "title": "Урок 4: Употребление артиклей",
+      "intro": "В предложениях",
+      "theory": [
+        {
+          "title": "Употребление",
+          "content": "Артикли меняются в падежах, но на A1 используйте Nominativ."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Der Apfel",
+          "ru": "яблоко (def)"
+        },
+        {
+          "de": "Ein Apfel",
+          "ru": "яблоко (indef)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "___ Apfel ist rot.",
+          "answers": [
+            "Der"
+          ]
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'a child':",
+          "answer": "ein Kind"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "eine Banane"
+        }
+      ]
+    },
+    {
+      "id": "lesson3_5",
+      "title": "Урок 5: Практика",
+      "intro": "Сочетание с существительными",
+      "theory": [
+        {
+          "title": "Практика",
+          "content": "Сочетайте: Das ist ein Buch. Die ist eine Frau."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "Das ist",
+          "ru": "это"
+        },
+        {
+          "de": "Die ist",
+          "ru": "это (fem)"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "reorder",
+          "instruction": "Собери: 'Это книга'",
+          "pieces": [
+            "Das",
+            "ist",
+            "ein",
+            "Buch"
+          ],
+          "correct": [
+            "Das",
+            "ist",
+            "ein",
+            "Buch"
+          ]
+        },
+        {
+          "type": "match",
+          "question": "Сопоставь",
+          "pairs": [
+            {
+              "de": "Der",
+              "ru": "the (masc)"
+            },
+            {
+              "de": "Ein",
+              "ru": "a (masc)"
+            }
+          ]
+        },
+        {
+          "type": "listen_type",
+          "question": "Прослушай и напиши",
+          "answer": "die Frau"
+        },
+        {
+          "type": "mcq",
+          "question": "Для 'Buch' (neut): ",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "lesson3_6",
+      "title": "Урок 6: Тест",
+      "intro": "Проверь артикли",
+      "theory": [
+        {
+          "title": "Повторение",
+          "content": "Повторите все артикли и роды."
+        }
+      ],
+      "vocab": [
+        {
+          "de": "der",
+          "ru": "the (masc)"
+        },
+        {
+          "de": "die",
+          "ru": "the (fem)"
+        },
+        {
+          "de": "das",
+          "ru": "the (neut)"
+        },
+        {
+          "de": "ein",
+          "ru": "a"
+        }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "___ Kind läuft.",
+          "answers": [
+            "Das"
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": "A banana: ",
+          "options": [
+            "ein Banane",
+            "eine Banane",
+            "das Banane"
+          ],
+          "answer": 1
+        },
+        {
+          "type": "input",
+          "question": "Переведи 'the man':",
+          "answer": "der Mann"
+        },
+        {
+          "type": "pronounce",
+          "question": "Произнесите: ",
+          "pronounce": "das Kind"
+        }
+      ]
+    }
+  ]
+}
