@@ -67,6 +67,14 @@
     const isSession = !!h.qs("#lesson-root");
     if (isMain) await renderContent(chapter);
     else if (isSession) await renderSession();
+
+    // NEW: Settings button listener
+    const settingsBtn = document.getElementById('settings-btn');
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', () => {
+        BERLINGO.ui.renderSettingsModal();
+      });
+    }
   }
 
   async function renderContent(chapter) {
@@ -129,13 +137,30 @@
         const currentDone = h.isDone(ls.id);
         const card = document.createElement('div');
         card.className = 'lesson-card' + (!prevDone ? ' locked' : '');
-        const actionHtml = !prevDone ? '<div class="lock-badge"><i class="fas fa-lock"></i> После предыдущего</div>'
+        let actionHtml = !prevDone ? '<div class="lock-badge"><i class="fas fa-lock"></i> После предыдущего</div>'
           : `<a class="btn" style="position:absolute; right:10px; bottom:10px" href="lessons.html?lesson=${ls.id}&chapter=learning">${currentDone ? '<i class="fas fa-check"></i> Повторить' : '<i class="fas fa-play"></i> Начать'}</a>`;
+        // UPDATED: Add skip button if dev mode and skip enabled
+        if (h.isDevMode() && h.isSkipEnabled() && !currentDone && prevDone) {
+          actionHtml += `<button class="btn ghost small skip-lesson" style="position:absolute; right:10px; top: 10px; height: 35px; bottom:40px" data-lesson-id="${ls.id}"><i class="fas fa-forward"></i> Пропустить</button>`;
+        }
         card.innerHTML = `<h4>${ls.title}</h4><div class="lesson-meta">${ls.intro || ''}</div>${actionHtml}`;
         lessonsList.appendChild(card);
       });
       moduleCard.appendChild(lessonsList);
       contentEl.appendChild(moduleCard);
+
+      // UPDATED: Add event listeners for skip buttons if dev mode and skip enabled
+      if (h.isDevMode() && h.isSkipEnabled()) {
+        const skipButtons = lessonsList.querySelectorAll('.skip-lesson');
+        skipButtons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lessonId = btn.dataset.lessonId;
+            h.markDone(lessonId, 10, 0); // Mark as done with full hearts, 0 points
+            window.location.reload(); // Reload to update UI
+          });
+        });
+      }
     }
   }
 
@@ -166,150 +191,89 @@
     const container = h.qs("#lessons");
     const grid = document.createElement("div");
     grid.className = "lessons-grid";
-    PRACTICES.forEach(p => {
+    (PRACTICES || []).forEach(p => {
+      const done = h.isDone(p.id);
       const card = document.createElement("div");
       card.className = "lesson-card";
-      card.innerHTML = `<h3>${p.description}</h3><div class="lesson-meta">На основе уроков</div><a class="btn" style="position:absolute; right:10px; bottom:10px" href="lessons.html?lesson=${p.id}&chapter=practice"><i class="fas fa-dumbbell"></i> Тренировать</a>`;
+      card.innerHTML = `<h3>${p.title}</h3><div class="lesson-meta">${p.description || ''}</div><a class="btn" style="position:absolute; right:10px; bottom:10px" href="lessons.html?practice=${p.id}&chapter=practice">${done ? '<i class="fas fa-check"></i> Повторить' : '<i class="fas fa-play"></i> Начать'}</a>`;
       grid.appendChild(card);
     });
     container.appendChild(grid);
   }
 
   async function renderSession() {
-    const root = h.qs("#lesson-root");
-    if (!root) return;
     const urlParams = new URLSearchParams(window.location.search);
     const lessonId = urlParams.get("lesson");
-    const chapter = urlParams.get("chapter") || "learning";
+    const practiceId = urlParams.get("practice");
+    if (lessonId) await renderLessonSession(lessonId);
+    else if (practiceId) await renderPracticeSession(practiceId);
+  }
+
+  async function renderLessonSession(lessonId) {
+    const root = h.qs("#lesson-root");
+    const lesson = await getLesson(lessonId);
+    if (!lesson) { root.innerHTML = "<p>Урок не найден.</p>"; return; }
     root.innerHTML = "";
+    ui.renderHeader(root, lesson.title, lesson.intro, "restart-lesson");
+    ui.renderProgress(root);
+    ui.renderStats(root);
+    const stepNav = ui.renderStepNav(root, [{title:"Теория"}, {title:"Словарь"}, {title:"Упражнения"}], ["book","language","dumbbell"]);
+    const content = document.createElement("div"); content.className = "step-content"; root.appendChild(content);
+    let exerciseIndex = 0;
 
-    if (chapter === "rules") {
-      const allRules = [...RULES.grammar, ...RULES.listening];
-      const rule = allRules.find(r => r.id === lessonId);
-      if (!rule) { root.innerHTML = "<p>Правило не найдено.</p>"; return; }
-      ui.renderHeader(root, rule.title, rule.intro, "restart-lesson");
-      HEARTS = parseInt(localStorage.getItem("berlingo_hearts_" + rule.id)) || 10;
-      POINTS = parseInt(localStorage.getItem("berlingo_points_" + rule.id)) || 0;
-      ui.renderStats(root, HEARTS);
-      const progress = ui.renderProgress(root);
-      const steps = [{title:"Теория"}, {title:"Упражнения"}];
-      const stepNav = ui.renderStepNav(root, steps, ["book", "dumbbell"]);
-      const content = document.createElement("div"); content.className = "step-content"; root.appendChild(content);
-      let exerciseIndex = 0;
-
-      function showStep(i) {
-        content.innerHTML = "";
-        h.qsa(".btn", stepNav).forEach(b => b.classList.remove("active"));
-        h.qsa(".btn", stepNav)[i].classList.add("active");
-        if (i === 0) {
-          const theory = document.createElement("div"); theory.className = "theory";
-          (rule.theory || []).forEach(t => {
-            const sec = document.createElement("section");
-            sec.innerHTML = `<h4>${t.title}</h4><p>${t.content}</p>`;
-            theory.appendChild(sec);
-          });
-          content.appendChild(theory);
-          const cont = document.createElement("div"); cont.className = "controls"; cont.innerHTML = '<button class="btn"><i class="fas fa-arrow-right"></i> К упражнениям</button>';
-          cont.querySelector("button").addEventListener("click", ()=> { enableStep(1); showStep(1); });
-          content.appendChild(cont);
-        }
-        if (i === 1) {
-          showNextExercise();
-        }
-      }
-
-      function showNextExercise(){
-        if (exerciseIndex >= (rule.exercises||[]).length) {
-          h.markDone(rule.id, HEARTS, POINTS);
-          content.innerHTML = `<div class="lesson-hero"><h3>Правило пройдено!</h3><p class="small">Очки: ${POINTS}</p><div class="controls"><a class="btn" href="/?chapter=rules"><i class="fas fa-arrow-left"></i> К правилам</a></div></div>`;
-          return;
-        }
-        const curr = rule.exercises[exerciseIndex];
-        exModule.renderExercise(content, curr, {
-          addPoints: (pts)=>{ POINTS+=pts; h.qs("#points").textContent = POINTS; },
-          loseHeart: ()=>{ HEARTS--; h.qs("#hearts").textContent = HEARTS; if (HEARTS <= 0) { content.innerHTML = '<p>Сердечки кончились! Повторите урок.</p>'; } },
-          onContinue: ()=>{ exerciseIndex++; showNextExercise(); }
+    function showStep(i) {
+      content.innerHTML = "";
+      h.qsa(".btn", stepNav).forEach(b => b.classList.remove("active"));
+      h.qsa(".btn", stepNav)[i].classList.add("active");
+      if (i === 0) {
+        const theory = document.createElement("div"); theory.className = "theory";
+        (lesson.theory || []).forEach(t => {
+          const sec = document.createElement("section");
+          sec.innerHTML = `<h4>${t.title}</h4><p>${t.content}</p>`;
+          theory.appendChild(sec);
         });
-        ui.updateProgress(((exerciseIndex+1)/(rule.exercises||[]).length)*100);
+        content.appendChild(theory);
+        const cont = document.createElement("div"); cont.className = "controls"; cont.innerHTML = '<button class="btn"><i class="fas fa-arrow-right"></i> К словарю</button>';
+        cont.querySelector("button").addEventListener("click", ()=> { enableStep(1); showStep(1); });
+        content.appendChild(cont);
       }
+      if (i === 1) {
+        const vocab = document.createElement("div"); vocab.className = "vocab-grid";
+        (lesson.vocab || []).forEach(v => {
+          const card = document.createElement("div");
+          card.className = "vocab-card";
+          card.innerHTML = `<strong>${v.de}</strong> - ${v.ru}`;
+          card.addEventListener("click", () => h.speak(v.de));
+          vocab.appendChild(card);
+        });
+        content.appendChild(vocab);
+        const cont = document.createElement("div"); cont.className = "controls"; cont.innerHTML = '<button class="btn"><i class="fas fa-arrow-right"></i> К упражнениям</button>';
+        cont.querySelector("button").addEventListener("click", ()=> { enableStep(2); showStep(2); });
+        content.appendChild(cont);
+      }
+      if (i === 2) {
+        showNextExercise();
+      }
+    }
 
-      function enableStep(i) { const btns = Array.from(stepNav.querySelectorAll(".btn")); if (btns[i]) { btns[i].disabled=false; btns[i].classList.remove("ghost"); } }
-      showStep(0);
-      h.qs("#restart-lesson").addEventListener("click", ()=>{ h.unmarkDone(rule.id); location.reload(); });
-    } else if (chapter === "practice") {
-      await renderPracticeSession(lessonId);
-    } else {  // learning
-      let lesson;
-      try {
-        lesson = await getLesson(lessonId);
-      } catch (e) {
-        root.innerHTML = "<p>Урок не найден.</p>";
+    function showNextExercise(){
+      if (exerciseIndex >= (lesson.exercises||[]).length) {
+        h.markDone(lesson.id, HEARTS, POINTS);
+        content.innerHTML = `<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ${POINTS}</p><div class="controls"><a class="btn" href="/?chapter=learning"><i class="fas fa-arrow-left"></i> К урокам</a></div></div>`;
         return;
       }
-      ui.renderHeader(root, lesson.title, lesson.intro, "restart-lesson");
-      HEARTS = parseInt(localStorage.getItem("berlingo_hearts_" + lesson.id)) || 10;
-      POINTS = parseInt(localStorage.getItem("berlingo_points_" + lesson.id)) || 0;
-      ui.renderStats(root, HEARTS);
-      const progress = ui.renderProgress(root);
-      const steps = [{title:"Теория"}, {title:"Словарь"}, {title:"Упражнения"}];
-      const stepNav = ui.renderStepNav(root, steps, ["book","language","dumbbell"]);
-      const content = document.createElement("div"); content.className = "step-content"; root.appendChild(content);
-      let exerciseIndex = 0;
-
-      function showStep(i) {
-        content.innerHTML = "";
-        h.qsa(".btn", stepNav).forEach(b => b.classList.remove("active"));
-        h.qsa(".btn", stepNav)[i].classList.add("active");
-        if (i === 0) {
-          const theory = document.createElement("div"); theory.className = "theory";
-          (lesson.theory || []).forEach(t => {
-            const sec = document.createElement("section");
-            sec.innerHTML = `<h4>${t.title}</h4><p>${t.content}</p>`;
-            theory.appendChild(sec);
-          });
-          content.appendChild(theory);
-          const cont = document.createElement("div"); cont.className = "controls"; cont.innerHTML = '<button class="btn"><i class="fas fa-arrow-right"></i> К словарю</button>';
-          cont.querySelector("button").addEventListener("click", ()=> { enableStep(1); showStep(1); });
-          content.appendChild(cont);
-        }
-        if (i === 1) {
-          const vocab = document.createElement("div"); vocab.className = "vocab-grid";
-          (lesson.vocab || []).forEach(v => {
-            const card = document.createElement("div");
-            card.className = "vocab-card";
-            card.innerHTML = `<strong>${v.de}</strong> - ${v.ru}`;
-            card.addEventListener("click", () => h.speak(v.de));
-            vocab.appendChild(card);
-          });
-          content.appendChild(vocab);
-          const cont = document.createElement("div"); cont.className = "controls"; cont.innerHTML = '<button class="btn"><i class="fas fa-arrow-right"></i> К упражнениям</button>';
-          cont.querySelector("button").addEventListener("click", ()=> { enableStep(2); showStep(2); });
-          content.appendChild(cont);
-        }
-        if (i === 2) {
-          showNextExercise();
-        }
-      }
-
-      function showNextExercise(){
-        if (exerciseIndex >= (lesson.exercises||[]).length) {
-          h.markDone(lesson.id, HEARTS, POINTS);
-          content.innerHTML = `<div class="lesson-hero"><h3>Урок пройден!</h3><p class="small">Очки: ${POINTS}</p><div class="controls"><a class="btn" href="/?chapter=learning"><i class="fas fa-arrow-left"></i> К урокам</a></div></div>`;
-          return;
-        }
-        const curr = lesson.exercises[exerciseIndex];
-        exModule.renderExercise(content, curr, {
-          addPoints: (pts)=>{ POINTS+=pts; h.qs("#points").textContent = POINTS; },
-          loseHeart: ()=>{ HEARTS--; h.qs("#hearts").textContent = HEARTS; if (HEARTS <= 0) { content.innerHTML = '<p>Сердечки кончились! Повторите урок.</p>'; } },
-          onContinue: ()=>{ exerciseIndex++; showNextExercise(); }
-        });
-        ui.updateProgress(((exerciseIndex+1)/(lesson.exercises||[]).length)*100);
-      }
-
-      function enableStep(i) { const btns = Array.from(stepNav.querySelectorAll(".btn")); if (btns[i]) { btns[i].disabled=false; btns[i].classList.remove("ghost"); } }
-      showStep(0);
-      h.qs("#restart-lesson").addEventListener("click", ()=>{ h.unmarkDone(lesson.id); location.reload(); });
+      const curr = lesson.exercises[exerciseIndex];
+      exModule.renderExercise(content, curr, {
+        addPoints: (pts)=>{ POINTS+=pts; h.qs("#points").textContent = POINTS; },
+        loseHeart: ()=>{ HEARTS--; h.qs("#hearts").textContent = HEARTS; if (HEARTS <= 0) { content.innerHTML = '<p>Сердечки кончились! Повторите урок.</p>'; } },
+        onContinue: ()=>{ exerciseIndex++; showNextExercise(); }
+      });
+      ui.updateProgress(((exerciseIndex+1)/(lesson.exercises||[]).length)*100);
     }
+
+    function enableStep(i) { const btns = Array.from(stepNav.querySelectorAll(".btn")); if (btns[i]) { btns[i].disabled=false; btns[i].classList.remove("ghost"); } }
+    showStep(0);
+    h.qs("#restart-lesson").addEventListener("click", ()=>{ h.unmarkDone(lesson.id); location.reload(); });
   }
 
   async function renderPracticeSession(practiceId) {
@@ -348,9 +312,8 @@
 
     async function showNext() {
       content.innerHTML = "";
-      const data = await collectData();  // Await here to get data
-      // Затем используйте data для generateExercise (адаптируйте generateExercise для использования data)
-      const ex = generateExercise(data);  // Предполагаем, что вы адаптируете функцию generateExercise для принятия data
+      const data = await collectData();
+      const ex = generateExercise(data);
       exModule.renderExercise(content, ex, {
         addPoints: (pts)=>{ POINTS+=pts; const p = h.qs("#points"); if(p) p.textContent = POINTS; },
         loseHeart: ()=>{},
@@ -366,6 +329,7 @@
   if (resetButton) {
     resetButton.addEventListener('click', function() {
       BERLINGO.helpers.resetProgress();
+      window.location.reload();
     });
   }
 

@@ -1,4 +1,3 @@
-
 /*
   helpers.js
   - Utility functions: qs, qsa, speak, storage helpers
@@ -50,6 +49,30 @@ window.BERLINGO.helpers = (function () {
     return done;
   }
 
+  // NEW: Skip enabled helpers
+  function isSkipEnabled() {
+    return localStorage.getItem("berlingo_enable_skip") === "1";
+  }
+
+  function setSkipEnabled(enabled) {
+    localStorage.setItem("berlingo_enable_skip", enabled ? "1" : "0");
+  }
+
+  // Dev mode helpers
+  function isDevMode() {
+    return localStorage.getItem("berlingo_dev_mode") === "1";
+  }
+
+  function setDevMode(enabled) {
+    localStorage.setItem("berlingo_dev_mode", enabled ? "1" : "0");
+  }
+
+  function resetProgress() {
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith("berlingo_")) localStorage.removeItem(key);
+    });
+  }
+
   // Speech
   let voicesLoaded = false;
   let germanVoices = [];
@@ -97,111 +120,114 @@ window.BERLINGO.helpers = (function () {
           if (fallback.length > 0) {
             germanVoices = fallback;
             voicesLoaded = true;
+            resolve(fallback);
+          } else {
+            voicesLoaded = true;
+            resolve([]);
           }
-          resolve(fallback);
+          return;
         }
-      }, 200);
+      }, 100);
     });
   }
 
-  // Обновленная функция speak
-  function speak(text) {
-    if (!("speechSynthesis" in window)) return;
-    
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = "de-DE";
-    
-    if (voicesLoaded && germanVoices.length > 0) {
-      u.voice = germanVoices[0];
-    }
-    
-    speechSynthesis.cancel();
-    speechSynthesis.speak(u);
+  function speak(text, voiceIndex = 0) {
+    if (!("speechSynthesis" in window) || !voicesLoaded) return;
+    const voices = germanVoices || [];
+    if (voices.length === 0) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = voices[voiceIndex % voices.length];
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    speechSynthesis.speak(utterance);
   }
 
-  // Special characters helper
-  function addSpecialChars(targetEl) {
-    const chars = ['ä','ö','ü','ß'];
-    const div = document.createElement("div");
-    div.className = "special-chars small";
-    div.style.marginTop = "8px";
-    chars.forEach(c => {
-      const b = document.createElement("button");
-      b.className = "btn ghost small";
-      b.type = "button";
-      b.textContent = c;
-      b.addEventListener("click", () => {
-        const inp = targetEl.querySelector(".input-answer");
-        if (inp) {
-          inp.value += c;
-          inp.focus();
+  // Special chars
+  function addSpecialChars(container) {
+    const chars = ["ä", "ö", "ü", "ß", "Ä", "Ö", "Ü"];
+    const specialDiv = document.createElement("div");
+    specialDiv.className = "special-chars";
+    specialDiv.style.marginTop = "8px";
+    specialDiv.innerHTML = chars.map(c => `<button class="btn ghost small" style="font-size:12px;padding:4px 6px;">${c}</button>`).join("");
+    specialDiv.querySelectorAll("button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const input = container.querySelector(".input-answer");
+        if (input) {
+          const start = input.selectionStart;
+          const end = input.selectionEnd;
+          const value = input.value;
+          input.value = value.substring(0, start) + btn.textContent + value.substring(end);
+          input.focus();
+          input.setSelectionRange(start + 1, start + 1);
         }
       });
-      div.appendChild(b);
     });
-    targetEl.appendChild(div);
+    container.appendChild(specialDiv);
   }
 
-  function resetProgress() {
-    // Удаляем все ключи, связанные с прогрессом Berlingo
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith('berlingo_')) {
-        keysToRemove.push(key);
-      }
-    }
-    
-    keysToRemove.forEach(key => localStorage.removeItem(key));
-    
-    // Перезагружаем страницу для применения изменений
-    setTimeout(() => {
-      window.location.reload();
-    }, 300);
-  }
-
-  // Drag & Drop handlers for '.piece' containers (desktop + touch)
+  // DnD handlers for reorder
   function addDnDHandlers(container) {
-    if (!container) return;
     let selected = null;
     let touchData = null;
 
-    // Desktop native DnD
-    container.addEventListener("dragstart", (e) => {
-      if (e.target.classList.contains("piece")) {
-        selected = e.target;
-        e.target.classList.add("dragging");
-        e.dataTransfer.effectAllowed = "move";
-        try { e.dataTransfer.setData("text/plain", ""); } catch (err) {}
-      }
+    container.addEventListener("mousedown", (e) => {
+      if (!e.target.classList.contains("piece")) return;
+      selected = e.target;
+      selected.classList.add("dragging");
+      selected.style.position = "absolute";
+      selected.style.zIndex = "1000";
+      const rect = selected.getBoundingClientRect();
+      selected.style.left = `${e.clientX - rect.width / 2}px`;
+      selected.style.top = `${e.clientY - rect.height / 2}px`;
+      selected.style.transition = "none";
+      selected.style.width = `${rect.width}px`;
+      selected.style.height = `${rect.height}px`;
     });
-    container.addEventListener("dragover", (e) => {
-      e.preventDefault();
+
+    document.addEventListener("mousemove", (e) => {
+      if (!selected) return;
+      const dx = e.clientX - (selected.getBoundingClientRect().left + selected.offsetWidth / 2);
+      const dy = e.clientY - (selected.getBoundingClientRect().top + selected.offsetHeight / 2);
+      selected.style.left = `${parseInt(selected.style.left) + dx}px`;
+      selected.style.top = `${parseInt(selected.style.top) + dy}px`;
+    });
+
+    document.addEventListener("mouseup", (e) => {
+      if (!selected) return;
+      selected.classList.remove("dragging");
+      selected.style.position = "";
+      selected.style.zIndex = "";
+      selected.style.transition = "";
       const after = getDragAfterElement(container, e.clientX, e.clientY);
       if (!after) container.appendChild(selected);
       else container.insertBefore(selected, after);
-    });
-    container.addEventListener("dragend", () => {
-      if (selected) selected.classList.remove("dragging");
       selected = null;
     });
 
-    // Touch support (simple)
+    // Touch support
     container.addEventListener("touchstart", (e) => {
-      const el = e.target.closest(".piece");
-      if (!el) return;
-      selected = el;
+      if (!e.target.classList.contains("piece")) return;
+      e.preventDefault();
+      selected = e.target;
       selected.classList.add("dragging");
-      const rect = selected.getBoundingClientRect();
-      touchData = {startX: e.touches[0].clientX, startY: e.touches[0].clientY, left: rect.left, top: rect.top};
       selected.style.position = "absolute";
-      selected.style.zIndex = 1000;
+      selected.style.zIndex = "1000";
+      const rect = selected.getBoundingClientRect();
+      touchData = {
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+        left: e.touches[0].clientX - rect.width / 2,
+        top: e.touches[0].clientY - rect.height / 2
+      };
       selected.style.left = `${touchData.left}px`;
       selected.style.top = `${touchData.top}px`;
       selected.style.transition = "none";
-    }, {passive:false});
+      selected.style.width = `${rect.width}px`;
+      selected.style.height = `${rect.height}px`;
+    }, {passive: false});
 
-    container.addEventListener("touchmove", (e) => {
+    document.addEventListener("touchmove", (e) => {
       if (!selected || !touchData) return;
       e.preventDefault();
       const dx = e.touches[0].clientX - touchData.startX;
@@ -303,6 +329,10 @@ return {
   addSpecialChars, 
   addDnDHandlers, 
   addMatchHandlers, 
-  showWordPopup
+  showWordPopup,
+  isDevMode,
+  setDevMode,
+  isSkipEnabled,
+  setSkipEnabled
 };
 })();

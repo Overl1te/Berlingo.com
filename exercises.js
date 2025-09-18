@@ -81,124 +81,96 @@ window.BERLINGO.exercise = (function (h, ui) {
       checkBtn.type = "button";
       checkBtn.innerHTML = '<i class="fas fa-check"></i> Проверить';
       checkBtn.addEventListener("click", () => {
-        const val = inp.value.trim().toLowerCase();
-        const answer = (ex.answer || ex.answers || "").toString().toLowerCase();
-        let isCorrect = false;
-        if (ex.type === "fill_blank" && Array.isArray(ex.answers)) {
-          isCorrect = ex.answers.some(a => a.toLowerCase() === val);
-        } else {
-          isCorrect = val === answer;
+        const userAnswer = inp.value.trim().toLowerCase();
+        const correctAnswer = (ex.answer || "").toLowerCase();
+        const isCorrect = userAnswer === correctAnswer;
+        if (isCorrect) {
+          h.speak(ex.answer || "");
         }
         resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
         if (!isCorrect) {
-          correctAnswerEl.textContent = `Правильный ответ: ${Array.isArray(ex.answers) ? ex.answers[0] : ex.answer}`;
+          correctAnswerEl.textContent = `Правильный ответ: ${ex.answer}`;
           correctAnswerEl.style.display = "block";
         }
-        if (isCorrect) {
-          h.speak(Array.isArray(ex.answers) ? ex.answers[0] : ex.answer);  // Произносить правильный ответ (в uppercase-форме из JSON)
-        }
-        document.querySelector(".check-controls").style.display = "none";
         inp.disabled = true;
         checkBtn.disabled = true;
         finish(isCorrect);
       });
-      checkControls.appendChild(checkBtn);
+      exContent.appendChild(checkBtn);
     } else if (ex.type === "reorder") {
-      const sentenceContainer = document.createElement("div");
-      sentenceContainer.className = "reorder-sentence";
-      exContent.appendChild(sentenceContainer);
-
-      const piecesContainer = document.createElement("div");
-      piecesContainer.className = "reorder-pieces";
-
-      function handlePieceClick(e) {
-        const piece = e.target;
-        if (piece.parentNode === piecesContainer) {
-          sentenceContainer.appendChild(piece);
-        } else if (piece.parentNode === sentenceContainer) {
-          piecesContainer.appendChild(piece);
-        }
-      }
-
-      const shuffledPieces = [...ex.pieces].sort(() => Math.random() - 0.5);  // Перемешиваем слова
-      shuffledPieces.forEach(p => {
-        const piece = document.createElement("div");
-        piece.className = "piece";
-        piece.textContent = p;
-        piece.addEventListener("click", (e) => {
-          h.speak(p);  // Произносить слово при клике (в форме как написано)
-          handlePieceClick(e);
-        });
-        piecesContainer.appendChild(piece);
+      const sentenceDiv = document.createElement("div");
+      sentenceDiv.className = "reorder-sentence";
+      exContent.appendChild(sentenceDiv);
+      const piecesDiv = document.createElement("div");
+      piecesDiv.className = "reorder-pieces";
+      exContent.appendChild(piecesDiv);
+      h.addDnDHandlers(piecesDiv);
+      ex.pieces.forEach(piece => {
+        const p = document.createElement("div");
+        p.className = "piece";
+        p.textContent = piece;
+        p.draggable = true;
+        piecesDiv.appendChild(p);
       });
-      exContent.appendChild(piecesContainer);
-
       const checkBtn = document.createElement("button");
       checkBtn.className = "btn";
-      checkBtn.type = "button";
       checkBtn.innerHTML = '<i class="fas fa-check"></i> Проверить';
       checkBtn.addEventListener("click", () => {
-        const current = Array.from(sentenceContainer.children).map(p => p.textContent.trim());
-        const isCorrect = current.join(" ") === (ex.correct || []).join(" ");
+        const ordered = Array.from(sentenceDiv.children).map(el => el.textContent).join(" ");
+        const isCorrect = ordered === ex.correct.join(" ");
         resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Неправильно.';
         if (!isCorrect) {
-          correctAnswerEl.textContent = `Правильный порядок: ${(ex.correct || []).join(" ")}`;
+          correctAnswerEl.textContent = `Правильный порядок: ${ex.correct.join(" ")}`;
           correctAnswerEl.style.display = "block";
         }
-        if (isCorrect) {
-          h.speak((ex.correct || []).join(" "));  // Произносить только правильную фразу после проверки
-        }
-        // Отключаем дальнейшие клики
-        Array.from(exContent.querySelectorAll(".piece")).forEach(p => {
-          p.style.pointerEvents = "none";
-        });
-        document.querySelector(".check-controls").style.display = "none";
+        Array.from(piecesDiv.children).forEach(p => p.style.cursor = "default");
         checkBtn.disabled = true;
         finish(isCorrect);
       });
-      checkControls.appendChild(checkBtn);
+      exContent.appendChild(checkBtn);
     } else if (ex.type === "match") {
-      const pairsContainer = document.createElement("div");
-      pairsContainer.className = "match-pairs";
-
-      const left = document.createElement("div");
-      left.className = "match-column";
-      const right = document.createElement("div");
-      right.className = "match-column";
-      const shuffledRight = [...(ex.pairs || [])].sort(() => Math.random() - 0.5);
-      (ex.pairs || []).forEach(p => {
-        const l = document.createElement("div");
-        l.className = "match-left";
-        l.textContent = p.de;
-        left.appendChild(l);
+      const leftDiv = document.createElement("div");
+      leftDiv.className = "match-lefts";
+      ex.left.forEach(item => {
+        const el = document.createElement("div");
+        el.className = "match-left";
+        el.textContent = item;
+        leftDiv.appendChild(el);
       });
-      shuffledRight.forEach(p => {
-        const r = document.createElement("div");
-        r.className = "match-right";
-        r.textContent = p.ru;
-        right.appendChild(r);
+      exContent.appendChild(leftDiv);
+      const rightDiv = document.createElement("div");
+      rightDiv.className = "match-rights";
+      ex.right.forEach(item => {
+        const el = document.createElement("div");
+        el.className = "match-right";
+        el.textContent = item;
+        rightDiv.appendChild(el);
       });
-      pairsContainer.appendChild(left);
-      pairsContainer.appendChild(right);
-      exContent.appendChild(pairsContainer);
-      h.addMatchHandlers(exContent, ex.pairs || []);
+      exContent.appendChild(rightDiv);
+      h.addMatchHandlers(exContent, ex.pairs);
       const checkBtn = document.createElement("button");
       checkBtn.className = "btn";
-      checkBtn.type = "button";
       checkBtn.innerHTML = '<i class="fas fa-check"></i> Проверить';
       checkBtn.addEventListener("click", () => {
-        const allMatched = Array.from(exContent.querySelectorAll(".match-left")).every(l => l.classList.contains("matched"));
-        resultEl.innerHTML = allMatched ? '<i class="fas fa-check" style="color:var(--success)"></i> Правильно!' : '<i class="fas fa-times" style="color:var(--error)"></i> Не все сопоставлено.';
-        document.querySelector(".check-controls").style.display = "none";
+        let correctCount = 0;
+        ex.pairs.forEach(pair => {
+          const leftEl = exContent.querySelector(`[data-matched="${pair.ru}"]`);
+          if (leftEl && leftEl.textContent === pair.de) correctCount++;
+        });
+        const isCorrect = correctCount === ex.pairs.length;
+        resultEl.innerHTML = isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Все правильно!' : `<i class="fas fa-times" style="color:var(--error)"></i> ${correctCount}/${ex.pairs.length} пар верно.`;
+        if (!isCorrect) {
+          correctAnswerEl.innerHTML = ex.pairs.map(p => `<div><strong>${p.de}</strong> - ${p.ru}</div>`).join("");
+          correctAnswerEl.style.display = "block";
+        }
+        Array.from(exContent.querySelectorAll(".match-left, .match-right")).forEach(el => el.style.pointerEvents = "none");
         checkBtn.disabled = true;
-        finish(allMatched);
+        finish(isCorrect);
       });
-      checkControls.appendChild(checkBtn);
+      exContent.appendChild(checkBtn);
     } else if (ex.type === "pronounce") {
-      // Split the pronounce field into words
-      const words = (ex.pronounce || "").trim().split(/\s+/);
-      h.speak(ex.pronounce || "")
-      // Build the title with play button for whole phrase and clickable words
+      const words = (ex.pronounce || "").split(" ");
+      // UPDATED: Set title with play buttons
       const titleDiv = exEl.querySelector("div strong"); // Assuming the strong is already in the innerHTML
       titleDiv.innerHTML = `${ex.question || ""} <div class="pronounce-container" style="display: inline-flex; align-items: center; gap: 4px;">
         <button class="btn small play-whole" style="padding: 4px 8px;"><i class="fas fa-volume-up"></i></button>
@@ -270,6 +242,29 @@ window.BERLINGO.exercise = (function (h, ui) {
       exContent.appendChild(recordBtn);
     } else {
       exContent.innerHTML = "<div>Неподдерживаемый тип упражнения.</div>";
+    }
+
+    // NEW: Add skip button if dev mode and skip enabled
+    if (h.isDevMode() && h.isSkipEnabled()) {
+      const skipBtn = document.createElement("button");
+      skipBtn.className = "btn ghost small skip-exercise";
+      skipBtn.innerHTML = '<i class="fas fa-forward"></i> Пропустить';
+      skipBtn.style.marginTop = "12px";
+      skipBtn.addEventListener("click", () => {
+        resultEl.innerHTML = '<i class="fas fa-forward" style="color:var(--muted);"></i> Пропущено';
+        // Disable other interactions if needed
+        if (ex.type === "mcq") {
+          Array.from(exContent.querySelectorAll(".mcq-option")).forEach(b => b.disabled = true);
+        } else if (ex.type === "input") {
+          const inp = exContent.querySelector(".input-answer");
+          if (inp) inp.disabled = true;
+          const checkBtn = exContent.querySelector(".btn:not(.skip-exercise)");
+          if (checkBtn) checkBtn.disabled = true;
+        }
+        // Proceed without points or penalty
+        continueControls.style.display = "block";
+      });
+      exContent.appendChild(skipBtn);
     }
 
     container.appendChild(exEl);

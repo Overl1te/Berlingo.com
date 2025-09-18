@@ -239,6 +239,162 @@ body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(800
   }
 }
 
+/* Settings Modal */
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.settings-modal.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  width: 80%;
+  max-width: 800px;
+  height: 70vh;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  position: relative; /* For absolute close button */
+}
+
+.modal-sidebar {
+  width: 30%;
+  border-right: 1px solid var(--glass-border);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.modal-main {
+  width: 70%;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.category-item {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.category-item:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+.category-item.active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .modal-content {
+    flex-direction: column;
+    height: 80vh;
+    width: 90%;
+  }
+  .modal-sidebar {
+    width: 100%;
+    height: 30%;
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .modal-main {
+    width: 100%;
+    height: 70%;
+  }
+}
+
+.skip-lesson { border: 1px solid rgba(171,71,188,0.3); color: var(--accent); }
+.skip-lesson:hover { background: rgba(171,71,188,0.1); transform: scale(1.02); }
+
 .recordBtn {
   display: inline-flex;
   align-items: center;
