@@ -512,6 +512,37 @@ footer > div:nth-child(2) {
   transform: scale(1.05);
 }
 
+.nav-container {
+  position: relative;
+  overflow: hidden;
+}
+.nav-items-wrapper {
+  transition: scroll 0.3s ease;
+}
+.nav-prev, .nav-next {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.nav-item {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  background: var(--card);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.nav-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+.nav-item.active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
 /* Адаптив для мобильных: уменьшаем gap */
 @media (max-width: 600px) {
   .reorder-sentence {

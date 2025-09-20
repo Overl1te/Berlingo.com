@@ -96,25 +96,67 @@
     const subNav = document.createElement('div');
     subNav.className = 'nav-container';
     subNav.style.marginBottom = '16px';
+    const navItemsWrapper = document.createElement('div');
+    navItemsWrapper.className = 'nav-items-wrapper';
+    navItemsWrapper.style.display = 'flex';
+    navItemsWrapper.style.gap = '8px';
+    navItemsWrapper.style.overflow = 'hidden';
     LESSONS.forEach((section, index) => {
       const item = document.createElement('div');
       item.className = 'nav-item';
       item.textContent = section.level;
       item.addEventListener('click', async () => {
-        h.qsa('.nav-item', subNav).forEach(i => i.classList.remove('active'));
+        h.qsa('.nav-item', navItemsWrapper).forEach(i => i.classList.remove('active'));
         item.classList.add('active');
         await renderModules(section.modules, content);
       });
-      subNav.appendChild(item);
+      navItemsWrapper.appendChild(item);
     });
+    subNav.appendChild(navItemsWrapper);
     container.appendChild(subNav);
+
+    const isMobile = window.matchMedia('(max-width: 600px)').matches;
+    const visibleCount = isMobile ? 3 : 6;
+    if (LESSONS.length > visibleCount) {
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'nav-prev btn ghost small';
+      prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'nav-next btn ghost small';
+      nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+      subNav.insertBefore(prevBtn, navItemsWrapper);
+      subNav.appendChild(nextBtn);
+      subNav.style.display = 'flex';
+      subNav.style.alignItems = 'center';
+      subNav.style.gap = '8px';
+      const firstItem = navItemsWrapper.querySelector('.nav-item');
+      if (firstItem) {
+        const itemWidth = firstItem.offsetWidth;
+        const gap = 8;
+        const wrapperWidth = visibleCount * itemWidth + (visibleCount - 1) * gap;
+        navItemsWrapper.style.width = `${wrapperWidth}px`;
+        const scrollAmount = itemWidth + gap;
+        prevBtn.addEventListener('click', () => {
+          navItemsWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+          navItemsWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+        prevBtn.disabled = true;
+        navItemsWrapper.addEventListener('scroll', () => {
+          const scrollLeft = navItemsWrapper.scrollLeft;
+          prevBtn.disabled = scrollLeft <= 0;
+          nextBtn.disabled = scrollLeft >= navItemsWrapper.scrollWidth - navItemsWrapper.clientWidth;
+        });
+      }
+    }
 
     const content = document.createElement('div');
     content.id = 'learning-content';
     container.appendChild(content);
 
     if (LESSONS.length > 0) {
-      h.qsa('.nav-item', subNav)[0].classList.add('active');
+      h.qsa('.nav-item', navItemsWrapper)[0].classList.add('active');
       await renderModules(LESSONS[0].modules, content);
     }
   }
